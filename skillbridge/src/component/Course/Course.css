@@ -1,0 +1,21 @@
+.courseImage{
+
+    width:100%;
+}
+
+.couseDetails:active{
+    box-shadow: 2px solid orange;
+}
+
+/* .duration_container{
+    height: 30px;
+    width: 20px;
+} */
+
+.duration_text{
+    font-size: 12px;
+}
+
+/* .clockIcon{
+    width: 20px;
+} */

@@ -1,0 +1,26 @@
+.explore_courses_button{
+    background-color: var(--orange);
+}
+
+.img_container{
+    border-right: 1px solid rgb(203, 200, 200);
+}
+
+@media (max-width:768px){
+    .hero_section_heading h1{
+        font-size: 1rem;
+    }
+
+    #lightining_icon {
+        width: 30px;
+    }
+
+    .card-img{
+        width: 100px;
+    }
+
+    .card_container{
+        overflow-y: scroll;
+      }
+
+}    
