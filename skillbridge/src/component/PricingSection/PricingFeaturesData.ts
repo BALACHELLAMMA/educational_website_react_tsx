@@ -1,5 +1,4 @@
-import available_icon from '../../assets/img/available_icon.svg'
-import unavailable_icon from '../../assets/img/unavailable_icon.svg'
+import { available_icon, unavailable_icon } from "../../assets/resource/iconResource";
 
 export const PricingFeaturesData = [
     {

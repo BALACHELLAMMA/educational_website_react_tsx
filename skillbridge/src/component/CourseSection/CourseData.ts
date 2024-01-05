@@ -1,9 +1,4 @@
-import webDesignImage from '../../assets/img/web_design_fundamentals.svg'
-import uiuxImage from '../../assets/img/uiux_design.svg'
-import mobileDevelopmentImage from '../../assets/img/mobile_app_development.svg'
-import advanceJsImage from '../../assets/img/advance_js.svg'
-import graphicDesignImage from '../../assets/img/graphic_design_for_beginners.svg'
-import frontEndImage from '../../assets/img/front_end_development.svg'
+import { webDesignImage, uiuxImage, frontEndImage, mobileDevelopmentImage,advanceJsImage, graphicDesignImage } from "../../assets/resource/imgResource";
 
 export const Courselist = [
       {

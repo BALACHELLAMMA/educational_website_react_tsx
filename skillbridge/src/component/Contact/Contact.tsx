@@ -1,13 +1,7 @@
-// import React from 'react';
 import { DescriptionList } from '../Description/Description';
+import { locationIcon,phoneIcon, mailIcon, linkedInIcon,facebookIcon,twitterIcon } from '../../assets/resource/iconResource';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
-import mailImage from '../../assets/img/mail_icon.svg';
-import phoneImage from '../../assets/img/phone_icon.svg';
-import locationImage from '../../assets/img/location_icon.svg';
-import facebookImage from '../../assets/img/fb_icon.svg';
-import twitterImage from '../../assets/img/twitter_logo.svg';
-import linkedInImage from '../../assets/img/linkedin_icon.svg';
 import './Contact.css';
 
 function Contact() {
@@ -78,21 +72,21 @@ function Contact() {
 
       <div className='card p-3  gap-2 d-flex  flex-column justify-content-center align-items-center'>
         <button className='btn bg-light'>
-         <img src={mailImage} alt='email' />
+         <img src={mailIcon} alt='email' />
         </button>
          <p>support@skillbridge.com</p>
       </div>
 
       <div className='card p-3  gap-2 d-flex  flex-column justify-content-center align-items-center'>
       <button className='btn bg-light'>
-         <img src={phoneImage} alt='phone'/>
+         <img src={phoneIcon} alt='phone'/>
         </button>
          <p>+91 00000 00000</p>
       </div>
 
       <div className='card p-3  gap-2 d-flex  flex-column justify-content-center align-items-center' >
          <button className='btn bg-light'>
-           <img src={locationImage} alt='location'/>
+           <img src={locationIcon} alt='location'/>
          </button>
          <p>Somewhere in the world</p>
       </div>
@@ -100,13 +94,13 @@ function Contact() {
       <div className='card p-3  d-flex gap-2 justify-content-center align-items-center'>
             <div className='socialMediaContainer d-flex gap-2'>
               <button className='btn bg-light'>
-                <img src={facebookImage} alt='icon' />
+                <img src={facebookIcon} alt='icon' />
               </button>
               <button className='btn bg-light'>
-                <img src={twitterImage} alt='icon' />
+                <img src={twitterIcon} alt='icon' />
               </button>
               <button className='btn bg-light'>
-                <img src={linkedInImage} alt='icon' />
+                <img src={linkedInIcon} alt='icon' />
               </button>
             </div>
             <p>Social Profiles</p>

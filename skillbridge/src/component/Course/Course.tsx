@@ -19,7 +19,7 @@ const Course: React.FC<CourseProps> = (props)=>{
             <div
                className="col d-flex justify-content-md-end justify-content-sm-start mt-sm-2">
                <button className="bg-light border-0 rounded p-3"
-               onClick={props.viewCourse}><b>View All</b></button>
+               onClick={props.viewCourse}><b>View Course</b></button>
             </div>
          </section>
          <section>

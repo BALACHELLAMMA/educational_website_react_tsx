@@ -6,7 +6,6 @@ import hamburger from '../../assets/img/hamburger.svg'
 import strokeImg from '../../assets/img/stroke.svg'
 
 import '../../component/Header/HeaderComponent.css'
-// import '../SignUp/SignUp'
 
 function HeaderComponent() {
     return (

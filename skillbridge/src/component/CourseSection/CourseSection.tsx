@@ -1,7 +1,5 @@
-// import React from 'react'
 import { Courselist } from './CourseData'
 
-// import webDesign from '../../assets/img/web_design_fundamentals.svg'
 
 function CourseSection() {
 

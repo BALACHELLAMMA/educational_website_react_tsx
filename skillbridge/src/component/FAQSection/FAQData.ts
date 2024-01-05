@@ -5,7 +5,7 @@ export const FAQList = [
         answer: 'Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.'
     },
     {
-        id:1,
+        id:2,
         question:'What kind of support can I expect from instructors?',
         answer: 'Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.'
     },

@@ -1,14 +1,9 @@
-import SarahImage from '../../assets/img/Sarah L.svg'
-import JasonImage from '../../assets/img/jason_img.svg'
-import EmilyImage from '../../assets/img/Emily R.svg'
-import MichaelImage from '../../assets/img/michael_img.svg'
-
-
+import { SarahImg, JasonImage, EmilyImage, MichaelImage } from "../../assets/resource/imgResource";
 export const Testimoniallist = [
     {
         id:1,
         name:"Sarah L",
-        image:`${SarahImage}`,
+        image:`${SarahImg}`,
         desc:'The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!'
     },
     {

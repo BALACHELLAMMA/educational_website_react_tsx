@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
-import { plusIcon} from '../../assets/resource/iconResource';
-import { faqForwardButton } from '../../assets/resource/imgResource';
+import closeIcon from "../../assets/img/close_icon.svg"
+import plusIcon from "../../assets/img/plus_icon.svg"
+import faq_forward_icon from "../../assets/img/faq_forward_button.svg"
 import { FAQList } from './FAQData';
 
-function FAQSection() {
+function Sample() {
 
-   //  const openCloseIcons = {plusIcon,closeIcon};
+    const openCloseIcons = {plusIcon,closeIcon};
 
     const [showAnswer, setShowAnswer] = useState<number | null>(null);
-   //  const [selected, setSelected] = useState(openCloseIcons.plusIcon);
+    const [selected, setSelected] = useState(openCloseIcons.plusIcon);
 
-   //  function openAnswer(){
-   //      setShowAnswer(null);
-   //      showAnswer ? setSelected(openCloseIcons.plusIcon) : setSelected(openCloseIcons.closeIcon);
-   //  }
+    function openAnswer(){
+        // setShowAnswer(null);
+        // showAnswer ? setSelected(openCloseIcons.plusIcon) : setSelected(openCloseIcons.closeIcon);
+        if(selected === openCloseIcons.plusIcon){
+            setSelected(openCloseIcons.closeIcon)
+        }
+    }
 
     const RenderFAQ = FAQList.map((FAQ)=>{
         return(
@@ -24,9 +28,23 @@ function FAQSection() {
                   <div
                      className="d-flex justify-content-between  rounded align-content-center p-2 ">
                      <p className="mt-2 fw-medium">{FAQ.question}</p>
-                     <button className='open_button border-0 bg-white'
-                      onClick={()=>setShowAnswer(FAQ.id)}>   
+                     {/* <div onClick={()=>setShowAnswer(FAQ.id)}> */}
+                      {/* {showAnswer !== null ?  
+                     (<button className='open_button border-0 bg-white'
+                    >   
                      <img src={plusIcon}
+                     className='open_close_icon w-100' alt='open_close_icon'/>
+                     </button>) : 
+                     (<button className='open_button border-0 bg-white'
+                    >   
+                     <img src={closeIcon}
+                     className='open_close_icon w-100' alt='open_close_icon'/>
+                     </button>)} */}
+                     {/* </div> */}
+                     <button className='open_button border-0 bg-white'
+                      onClick={()=>{{setShowAnswer(FAQ.id)};
+                                     openAnswer}}>   
+                     <img src={selected}
                      className='open_close_icon w-100' alt='open_close_icon'/>
                      </button>
                   </div>
@@ -38,7 +56,7 @@ function FAQSection() {
                         <p className="mt-3 fw-medium">Enrollment Process for
                            Different Courses</p>
                         <button className="faq_forward_button btn btn-circle">
-                           <img src={faqForwardButton} />
+                           <img src={faq_forward_icon} />
                         </button>
                      </div>
                   </div>
@@ -77,4 +95,4 @@ function FAQSection() {
   )
 }
 
-export default FAQSection
+export default Sample;

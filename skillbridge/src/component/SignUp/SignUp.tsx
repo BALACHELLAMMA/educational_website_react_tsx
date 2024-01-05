@@ -1,15 +1,6 @@
 // import React from 'react'
 import '../SignUp/SignUp.css'
-
-
-import sarahImg from '../../assets/img/Sarah L.svg'
-import backwardArrow from '../../assets/img/backward_arrow.svg'
-import forwardArrow from '../../assets/img/forward_arrow.svg'
-import loginArrow from '../../assets/img/login_arrow.svg'
-import googleLogo from '../../assets/img/google_logo.svg'
-
-
-
+import {sarahImg, forwardArrow, backwardArrow, googleLogo,loginArrow} from '../../assets/resource/imgResource'
 
 function SignUp() {
     return (

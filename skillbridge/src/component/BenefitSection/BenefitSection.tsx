@@ -1,6 +1,6 @@
 import React from 'react'
 import { Benefitlist } from './BenefitData'
-import benefitImage from '../../assets/img/benefit_arrow.svg'
+import { benefitIcon } from '../../assets/resource/iconResource';
 // import '../BenefitSection/BenefitSection.css'
 
 
@@ -16,8 +16,8 @@ function BenefitSection() {
                         lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat
                         senectus in.</p>
                     <div
-                        class="col d-flex justify-content-md-end justify-content-sm-start mt-sm-2">
-                        <button class="bg-white border-0 rounded p-3"><b>View All</b></button>
+                        className="col d-flex justify-content-md-end justify-content-sm-start mt-sm-2">
+                        <button className="bg-white border-0 rounded p-3"><b>View All</b></button>
                     </div>
                 </section>
 
@@ -26,17 +26,17 @@ function BenefitSection() {
                     {Benefitlist.filter(benefit => {
                         return (benefit.id <= 3);
                     }).map((benefit) => (
-                            <div class="col-md  benefit_sub_container bg-white   p-4 rounded ms-1"
+                            <div className="col-md  benefit_sub_container bg-white   p-4 rounded ms-1"
                             >
-                                <div class="number_container d-flex justify-content-end"><h1>{benefit.benefit_number}</h1></div>
-                                <div class="benefit_text_container">
+                                <div className="number_container d-flex justify-content-end"><h1>{benefit.benefit_number}</h1></div>
+                                <div className="benefit_text_container">
                                     <h4>{benefit.title}</h4>
                                     <p>{benefit.desc}</p>
                                 </div>
                                 <div
-                                    class="benefit_button_container d-flex justify-content-end">
-                                    <button class="rounded border-0 "><img
-                                        src={benefitImage} alt='benefitImage'/></button>
+                                    className="benefit_button_container d-flex justify-content-end">
+                                    <button className="rounded border-0 "><img
+                                        src={benefitIcon} alt='benefitImage'/></button>
                                 </div>
                             </div>
                     ))}
@@ -45,17 +45,17 @@ function BenefitSection() {
                     {Benefitlist.filter(benefit => {
                         return (benefit.id >3);
                     }).map((benefit) => (
-                              <div class="col-md benefit_sub_container bg-white  p-4 rounded ms-1"
+                              <div className="col-md benefit_sub_container bg-white  p-4 rounded ms-1"
                             >
-                                <div class="number_container d-flex justify-content-end"><h1>{benefit.benefit_number}</h1></div>
-                                <div class="benefit_text_container">
+                                <div className="number_container d-flex justify-content-end"><h1>{benefit.benefit_number}</h1></div>
+                                <div className="benefit_text_container">
                                     <h4>{benefit.title}</h4>
                                     <p>{benefit.desc}</p>
                                 </div>
                                 <div
-                                    class="benefit_button_container d-flex justify-content-end">
-                                    <button class="rounded border-0 "><img
-                                        src={benefitImage} alt='benefitImage'/></button>
+                                    className="benefit_button_container d-flex justify-content-end">
+                                    <button className="rounded border-0 "><img
+                                        src={benefitIcon} alt='benefitImage'/></button>
                                 </div>
                             </div>
                     ))}

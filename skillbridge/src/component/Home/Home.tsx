@@ -1,23 +1,13 @@
-// import React from 'react'
-import AbstractIcon from '../../assets/img/Abstract Line.svg'
-import LightiningIcon from '../../assets/img/lightining_icon.svg'
-import zapier from '../../assets/img/zapier_icon.svg'
-import spotify from '../../assets/img/spotify_icon.svg'
-import zoom from '../../assets/img/zoom_icon.svg'
-import amazon from '../../assets/img/amazon_icon.svg'
-import adobe from '../../assets/img/adobe_icon.svg'
-import notion from '../../assets/img/notion_icon.svg'
-import netflix from '../../assets/img/netflix_icon.svg'
-import videoImg from '../../assets/img/video_img.svg'
-
 import "../Home/Home.css"
-
 import { Link } from 'react-router-dom'
+import {LightiningIcon, zapier, spotify, netflix, notion, adobe, amazon, zoom} from "../../assets/resource/iconResource"
+import {AbstractIcon, videoImg } from "../../assets/resource/imgResource"
 import CourseSection from '../CourseSection/CourseSection'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
 import PricingSection from '../PricingSection/PricingSection'
 import FAQSection from '../FAQSection/FAQSection'
 import BenefitSection from '../BenefitSection/BenefitSection'
+
 
 
 function Home() {
@@ -101,6 +91,7 @@ function Home() {
       <PricingSection/>
       </div>
       <FAQSection/>
+      {/* <Sample/> */}
     </div>
   )
 }

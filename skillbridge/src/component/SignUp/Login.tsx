@@ -1,15 +1,5 @@
-import React from 'react'
 import '../SignUp/SignUp.css'
-
-
-import sarahImg from '../../assets/img/Sarah L.svg'
-import backwardArrow from '../../assets/img/backward_arrow.svg'
-import forwardArrow from '../../assets/img/forward_arrow.svg'
-import loginArrow from '../../assets/img/login_arrow.svg'
-import googleLogo from '../../assets/img/google_logo.svg'
-
-
-
+import {SarahImg, forwardArrow, backwardArrow, googleLogo,loginArrow} from '../../assets/resource/imgResource'
 
 function Login() {
     return (
@@ -36,7 +26,7 @@ function Login() {
                       d-flex justify-content-between ">
                         <div
                             className="profile  d-flex gap-3 align-items-center">
-                            <img src={sarahImg} alt="avatar" />
+                            <img src={SarahImg} alt="avatar" />
                             <p className="mt-3">Sarah L</p>
                         </div>
                         <button
@@ -58,13 +48,13 @@ function Login() {
                     Welcome back! please login to your account.
                 </p>
                 <div className="form-group">
-                    <label for="exampleInputEmail"><b>Email</b> </label>
+                    <label htmlFor="exampleInputEmail"><b>Email</b> </label>
                     <input type="email" className="form-control p-3"
                         id="exampleInputEmail" aria-describedby="emailHelp"
                         placeholder="Enter email" required />
                 </div>
                 <div className="form-group">
-                    <label for="exampleInputPassword"><b>Password</b></label>
+                    <label htmlFor="exampleInputPassword"><b>Password</b></label>
                     <input type="password" className="form-control p-3"
                         id="exampleInputPassword" placeholder="Password" required />
                 </div>

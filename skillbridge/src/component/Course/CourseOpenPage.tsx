@@ -1,10 +1,8 @@
-// import React from 'react'
-import { DescriptionList } from '../Description/Description';
 import '../Course/Course.css'
-import uiux_design from "../../assets/img/uiux_design.svg";
-import clock_icon from "../../assets/img/clock_icon.svg";
+import { DescriptionList } from '../Description/Description';
 import { IndividualCourseData } from './IndividualCourseData';
-
+import {uiux_design } from '../../assets/resource/imgResource';
+import { clock_icon } from '../../assets/resource/iconResource';
 
 
 function CourseOpenPage() {
@@ -44,7 +42,8 @@ function CourseOpenPage() {
                                             </div>
                                             <div className='duration_container btn bg-light border rounded d-flex align-items-start w-25 p-1'>
                                                 <img src={clock_icon} className='clockIcon' />
-                                            <p className='duration_text'>{course.content[0][2]}</p></div>
+                                                <p className='duration_text'>{course.content[0][2]}</p>
+                                            </div>
                                         </div>
 
                                         <div className='content_container d-flex align-items-start justify-content-between border p-2 rounded'>
@@ -54,7 +53,7 @@ function CourseOpenPage() {
                                             </div>
                                             <div className='duration_container btn bg-light border rounded d-flex align-items-start w-25 p-1'>
                                                 <img src={clock_icon} className='clockIcon' />
-                                            <p className='duration_text'>{course.content[0][2]}</p></div>
+                                                <p className='duration_text'>{course.content[0][2]}</p></div>
                                         </div>
 
                                         <div className='content_container row d-flex align-items-start justify-content-between border p-2 rounded'>
@@ -62,9 +61,10 @@ function CourseOpenPage() {
                                                 <h6>{course.content[2][0]}</h6>
                                                 <p>{course.content[2][1]}</p>
                                             </div>
-                                            <div className='col col-4 border duration_container btn bg-light border rounded d-flex align-items-start p-1'>
+                                            <div className='col col-4 border duration_container btn bg-light border rounded d-flex align-items-start p-1 gap-2'
+                                                style={{ width: "100px" }}>
                                                 <img src={clock_icon} className='clockIcon mt-2' />
-                                            <p className='duration_text mt-2 '>{course.content[0][2]}</p></div>
+                                                <p className='duration_text mt-2 '>{course.content[0][2]}</p></div>
                                         </div>
 
                                     </div>
@@ -75,6 +75,68 @@ function CourseOpenPage() {
 
                     )}
                 </div>
+            </div>
+
+            <div className='container'>
+                <section className='content mt-5 mb-5'>
+                    <div className='row row-cols-1 row-cols-md-2 g-4'>
+                        <div className='col'>
+                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
+                                <h1 className='fw-bold align-self-end'>01</h1>
+                                <h5>Introduction to UI/UX Design</h5>
+                                <div className='border rounded d-flex justify-content-between p-2'>
+                                    Understanding UI/UX design principles                                      
+                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='col'>
+                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
+                                <h1 className='fw-bold align-self-end'>02</h1>
+                                <h5>Introduction to UI/UX Design</h5>
+                                <div className='border rounded d-flex justify-content-between p-2'>
+                                    Understanding UI/UX design principles                                      
+                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='col'>
+                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
+                                <h1 className='fw-bold align-self-end'>03</h1>
+                                <h5>Introduction to UI/UX Design</h5>
+                                <div className='border rounded d-flex justify-content-between p-2'>
+                                    Understanding UI/UX design principles                                      
+                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='col'>
+                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
+                                <h1 className='fw-bold align-self-end'>04</h1>
+                                <h5>Introduction to UI/UX Design</h5>
+                                <div className='border rounded d-flex justify-content-between p-2'>
+                                    Understanding UI/UX design principles                                      
+                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <div className='col'>
+                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
+                                <h1 className='fw-bold align-self-end'>05</h1>
+                                <h5>Introduction to UI/UX Design</h5>
+                                <div className='border rounded d-flex gap-5 p-2'>
+                                    <div className=''>
+                                        <p>Understanding UI/UX design principles</p>
+                                        <p className='text-secondary'>Lesson 01</p>
+                                    </div>
+                                    <div>
+                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </section>
             </div>
         </div>
     )

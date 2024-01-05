@@ -1,8 +1,7 @@
-// import React from 'react';
 import './About.css';
 import { DescriptionList } from '../Description/Description';
 import { AboutContentList } from './AboutContent';
-import AbstractDesign from '../../assets/img/Abstract Design.svg'
+import {AbstractDesign} from '../../assets/resource/imgResource'
 
 const About = ()=> {
   const RenderAbout = AboutContentList.map((item) => {
