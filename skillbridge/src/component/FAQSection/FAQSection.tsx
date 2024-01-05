@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { plusIcon} from '../../assets/resource/iconResource';
 import { faqForwardButton } from '../../assets/resource/imgResource';
-import { FAQList } from './FAQData';
+import { FAQList } from '../Data/FAQData';
 
 function FAQSection() {
 

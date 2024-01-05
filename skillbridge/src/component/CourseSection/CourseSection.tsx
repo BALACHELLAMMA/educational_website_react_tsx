@@ -1,4 +1,4 @@
-import { Courselist } from './CourseData'
+import { Courselist } from '../Data/CourseData'
 
 
 function CourseSection() {

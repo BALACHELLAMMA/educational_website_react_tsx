@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import closeIcon from "../../assets/img/close_icon.svg"
 import plusIcon from "../../assets/img/plus_icon.svg"
 import faq_forward_icon from "../../assets/img/faq_forward_button.svg"
-import { FAQList } from './FAQData';
+import { FAQList } from '../Data/FAQData';
 
 function Sample() {
 

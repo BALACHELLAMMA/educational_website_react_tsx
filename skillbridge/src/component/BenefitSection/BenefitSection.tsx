@@ -1,5 +1,5 @@
 import React from 'react'
-import { Benefitlist } from './BenefitData'
+import { Benefitlist } from '../Data/BenefitData'
 import { benefitIcon } from '../../assets/resource/iconResource';
 // import '../BenefitSection/BenefitSection.css'
 

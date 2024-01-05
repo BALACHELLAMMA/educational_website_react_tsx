@@ -1,6 +1,6 @@
 import React from 'react'
 import '../PricingSection/PricingSection.css'
-import { PricingFeaturesData } from './PricingFeaturesData';
+import { PricingFeaturesData } from '../Data/PricingFeaturesData';
 
 
 function PricingSection() {

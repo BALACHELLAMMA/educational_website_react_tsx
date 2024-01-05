@@ -1,6 +1,6 @@
 // import React from 'react'
 import '../SignUp/SignUp.css'
-import {sarahImg, forwardArrow, backwardArrow, googleLogo,loginArrow} from '../../assets/resource/imgResource'
+import {SarahImg, forwardArrow, backwardArrow, googleLogo,loginArrow} from '../../assets/resource/imgResource'
 
 function SignUp() {
     return (
@@ -27,7 +27,7 @@ function SignUp() {
                       d-flex justify-content-between ">
                         <div
                             className="profile  d-flex gap-3 align-items-center">
-                            <img src={sarahImg} alt="avatar" />
+                            <img src={SarahImg} alt="avatar" />
                             <p className="mt-3">Sarah L</p>
                         </div>
                         <button

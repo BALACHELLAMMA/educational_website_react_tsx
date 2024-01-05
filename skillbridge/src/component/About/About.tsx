@@ -1,6 +1,6 @@
 import './About.css';
 import { DescriptionList } from '../Description/Description';
-import { AboutContentList } from './AboutContent';
+import { AboutContentList } from '../Data/AboutContent';
 import {AbstractDesign} from '../../assets/resource/imgResource'
 
 const About = ()=> {

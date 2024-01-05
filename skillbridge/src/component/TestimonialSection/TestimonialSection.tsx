@@ -1,5 +1,5 @@
 import React from 'react'
-import { Testimoniallist } from './TestimonialData'
+import { Testimoniallist } from '../Data/TestimonialData'
 
 
 

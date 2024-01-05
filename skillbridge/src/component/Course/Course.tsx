@@ -1,5 +1,5 @@
 // import React from 'react';
-import { CourseList } from './CourseContent';
+import { CourseList } from '../Data/CourseContent';
 import { DescriptionList } from '../Description/Description';
 interface CourseProps {
    viewCourse: () => void; 
