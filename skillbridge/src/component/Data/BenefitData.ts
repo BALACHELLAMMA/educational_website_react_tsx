@@ -1,3 +1,10 @@
+interface Benefitlist {
+    id:number,
+    benefit_number : String,
+    title : String,
+    desc : String
+}
+
 export const Benefitlist = [
     {
        id:1,

@@ -1,0 +1,36 @@
+@import "../../Scss/main.scss";
+
+.monthly_yearly_button{
+    
+    .monthly_button{
+        background-color: $orange;
+    }
+    
+    .yearly_button{
+        background-color: $white;
+    }
+
+}
+
+.plan_container {
+
+    .plan_type {
+        background-color: $quarterSpanishWhite;
+        border: 1px solid $lightOrange;
+    }
+
+    .price{
+        font-size: 40px;
+    }
+
+    .get_started_button
+    {
+        background-color: $orange;
+    border-radius: 0px 0px 5px 5px;
+    }
+
+    .available_features_container{
+        border-radius: 5px 5px 0px 0px; 
+    }
+
+}

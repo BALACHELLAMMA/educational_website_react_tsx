@@ -1,5 +1,5 @@
-import '../Course/Course.css'
-import { DescriptionList } from '../Description/Description';
+import '../Course/Course.scss'
+import { DescriptionList } from '../Data/Description';
 import { IndividualCourseData } from '../Data/IndividualCourseData';
 import {uiux_design } from '../../assets/resource/imgResource';
 import { clock_icon } from '../../assets/resource/iconResource';

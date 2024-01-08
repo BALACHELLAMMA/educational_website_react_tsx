@@ -1,0 +1,15 @@
+@import "../Scss/main.scss";
+
+.header {
+
+    .topBanner ,
+    .login_button,
+    .logout_button{
+        background-color: $orange;
+    }
+}
+
+/* .sign_up_button{
+    background-color: var(--white);
+} */
+

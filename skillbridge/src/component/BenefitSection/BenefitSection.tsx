@@ -1,7 +1,7 @@
 import React from 'react'
 import { Benefitlist } from '../Data/BenefitData'
 import { benefitIcon } from '../../assets/resource/iconResource';
-// import '../BenefitSection/BenefitSection.css'
+// import '../BenefitSection/BenefitSection.scss'
 
 
 function BenefitSection() {
@@ -27,7 +27,7 @@ function BenefitSection() {
                         return (benefit.id <= 3);
                     }).map((benefit) => (
                             <div className="col-md  benefit_sub_container bg-white   p-4 rounded ms-1"
-                            >
+                                 key={benefit.id}>
                                 <div className="number_container d-flex justify-content-end"><h1>{benefit.benefit_number}</h1></div>
                                 <div className="benefit_text_container">
                                     <h4>{benefit.title}</h4>

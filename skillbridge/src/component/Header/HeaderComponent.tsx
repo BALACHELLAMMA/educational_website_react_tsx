@@ -1,15 +1,21 @@
-// import React from 'react';
-import { Link } from "react-router-dom";
-
+import React from 'react';
+import { Link} from "react-router-dom";
+import { useAuth } from '../../utils/AuthContext';
 import logo from '../../assets/img/Logo.svg'
 import hamburger from '../../assets/img/hamburger.svg'
 import strokeImg from '../../assets/img/stroke.svg'
 
-import '../../component/Header/HeaderComponent.css'
+import '../../component/Header/HeaderComponent.scss'
 
 function HeaderComponent() {
+    // const navigate = useNavigate()
+    const {user, logoutUser} = useAuth()
+
+    // const logoutClick = () => {
+    //     navigate('/')
+    // }
     return (
-            <div className='bg-light'>
+            <div className='header bg-light'>
                 <p className="topBanner font-weight-bold text-center text-white p-3">Free Courses 🌟 Sale
                     Ends Soon, Get It Now
                     <img src={strokeImg} />
@@ -53,10 +59,17 @@ function HeaderComponent() {
                         </div>
                     </div>
                     <div className="login_signup_toggle_container d-flex gap-2">
-                        <a className="sign_up_button text-decoration-none text-black bg-light rounded border-0 p-2"
-                        href="../SignUp/SignUp">Sign up</a>
-                        <Link className="login_button rounded border-0 text-decoration-none  text-white p-2"
-                            to='/'>Login</Link>
+                    {user ? (
+                            <button onClick={logoutUser} className='logout_button  rounded border-0 text-white'>Logout</button>
+                        )
+                        :
+                        (
+                         <div>
+                             <Link to='/signup' className="sign_up_button bg-light rounded border-0 p-2 text-decoration-none text-black">Sign up</Link>
+                             <Link to='/' className="login_button rounded border-0   text-white p-2 text-decoration-none">Login</Link>
+                         </div>
+                             )}
+
                         <button className="navbar-toggler border-0 shadow-none" type="button"
                             data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasNavbar"

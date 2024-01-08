@@ -1,8 +1,8 @@
-import { DescriptionList } from '../Description/Description';
+import { DescriptionList } from '../Data/Description';
 import { locationIcon,phoneIcon, mailIcon, linkedInIcon,facebookIcon,twitterIcon } from '../../assets/resource/iconResource';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
-import './Contact.css';
+import './Contact.scss';
 
 function Contact() {
   return (
@@ -25,7 +25,7 @@ function Contact() {
 
      <div className='container'>
     <div className='row row-cols-2 d-flex rounded bg-white p-2'>
-    <section className='form_section col-12 col-md-8  p-4'>
+    <section className='contact col-12 col-md-8  p-4' id='form_section'>
     <Form >
       <div className='row row-cols-md-2 '>
       <Form.Group className="mb-3" controlId="firstNameInput">
@@ -68,7 +68,7 @@ function Contact() {
     </div>
     </section>
 
-    <section className='contact_section col-12 col-md-4 d-flex flex-column gap-3 p-lg-5 flex-wrap'>
+    <section className='contact col-12 col-md-4 d-flex flex-column gap-3 p-lg-5 flex-wrap' id='contact_section'>
 
       <div className='card p-3  gap-2 d-flex  flex-column justify-content-center align-items-center'>
         <button className='btn bg-light'>

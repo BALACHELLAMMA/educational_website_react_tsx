@@ -6,7 +6,7 @@ function CourseSection() {
 
     const RenderCourse = Courselist.map((course) => {
         return (
-            <div className="col">
+            <div className="col" key={course.id}>
                 <div className="card border-0 p-2">
                     <div className="card-body d-flex flex-column gap-2">
                         <img src={course.image}

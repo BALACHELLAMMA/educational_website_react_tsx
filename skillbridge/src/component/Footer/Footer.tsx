@@ -1,4 +1,4 @@
-// import '../Footer/Footer.css'
+// import '../Footer/Footer.scss'
 import {mailIcon, locationIcon , phoneIcon, facebookIcon, twitterIcon, linkedInIcon} from '../../assets/resource/iconResource';
 import { logo } from '../../assets/resource/imgResource';
 import { Link } from 'react-router-dom';

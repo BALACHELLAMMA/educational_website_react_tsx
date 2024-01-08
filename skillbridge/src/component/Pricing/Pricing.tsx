@@ -1,4 +1,4 @@
-import { DescriptionList } from '../Description/Description';
+import { DescriptionList } from '../Data/Description';
 
 function Pricing() {
   return (
