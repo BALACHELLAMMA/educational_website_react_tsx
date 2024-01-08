@@ -8,7 +8,7 @@ function TestimonialSection() {
 
     const RenderTestimonial = Testimoniallist.map((testimonial) => {
         return (
-            <div className="col-sm-6 mt-3 ">
+            <div className="col-sm-6 mt-3 " key={testimonial.id}>
             <div className="card border-0">
                <div className="comments card-header bg-white container">
                   <p>{testimonial.desc}</p>

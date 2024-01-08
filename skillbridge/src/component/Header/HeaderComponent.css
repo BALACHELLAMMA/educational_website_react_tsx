@@ -1,10 +1,13 @@
+@import 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap';
+* {
+  font-family: "Be Vietnam Pro";
+}
 
-.topBanner ,
-.login_button{
-    background-color: var(--orange);
+.header .topBanner,
+.header .login_button {
+  background-color: orange;
 }
 
 /* .sign_up_button{
     background-color: var(--white);
-} */
-
+} *//*# sourceMappingURL=HeaderComponent.css.map */

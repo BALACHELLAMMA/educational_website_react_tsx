@@ -1,11 +1,11 @@
-import "../Home/Home.css"
+import "../Home/Home.scss"
 import { Link } from 'react-router-dom'
 import {LightiningIcon, zapier, spotify, netflix, notion, adobe, amazon, zoom} from "../../assets/resource/iconResource"
 import {AbstractIcon, videoImg } from "../../assets/resource/imgResource"
 import CourseSection from '../CourseSection/CourseSection'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
-import PricingSection from '../PricingSection/PricingSection'
-import FAQSection from '../FAQSection/FAQSection'
+import PricingSection from '../CommonFunctionalities/PricingSection/PricingSection'
+import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'
 import BenefitSection from '../BenefitSection/BenefitSection'
 
 
