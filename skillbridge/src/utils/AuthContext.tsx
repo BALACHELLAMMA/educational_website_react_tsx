@@ -1,5 +1,4 @@
 import React, {useState, useEffect, createContext, ReactNode,useContext} from 'react'
-import { Account } from 'appwrite'
 import { useNavigate } from 'react-router-dom'
 import { ID } from 'appwrite'
 import { account } from '../appwriteConfig';
@@ -29,7 +28,7 @@ export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
   const [user,setUser] = useState<any>(null);
 
   useEffect(()=>{
-    //setLoading(false);
+    setLoading(false);
     checkUserStatus();
   },[]);
 
@@ -52,6 +51,8 @@ export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
   const logoutUser = async()=>{
      await account.deleteSession('current');
      setUser(null);
+     localStorage.clear();
+     navigate('/');
   };
 
   const registerUser = async(userInfo:UserInfo)=>{
@@ -62,7 +63,7 @@ export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
       await account.createEmailSession(userInfo.email, userInfo.password);
       let accountDetails = await account.get();
       setUser(accountDetails);
-      navigate('/'); // Assuming 'navigate' is defined somewhere
+      navigate('/');
     } catch (error) {
       console.error(error);
     }

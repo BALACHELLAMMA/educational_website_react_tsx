@@ -7,6 +7,7 @@ import TestimonialSection from '../TestimonialSection/TestimonialSection'
 import PricingSection from '../CommonFunctionalities/PricingSection/PricingSection'
 import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'
 import BenefitSection from '../BenefitSection/BenefitSection'
+import Sample from "./Sample"
 // import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
@@ -38,40 +39,40 @@ function Home() {
         </div>
       </section>
 
-      <section className="container card_section mt-5">
+      <section className="container card_section mt-5 mb-5">
          <div
-           className="card_container  d-flex  bg-white rounded p-3 row ">
-           <div className="img_container border col  p-md-4">
+           className="card_container  d-flex  bg-white rounded p-3">
+           <div className="img_container  p-5">
              <Link to="#">
                <img src={zapier} alt="zapier" className="card-img"/>
              </Link>
            </div>
-           <div className="img_container col p-md-4">
+           <div className="img_container p-5">
              <Link to="#">
                <img src={spotify} alt="spotify" className="card-img" />
              </Link>
            </div>
-           <div className="img_container col  p-md-4 p-3">
+           <div className="img_container p-5">
              <Link to="#">
                <img src={zoom} alt="zoom" className="card-img" />
              </Link>
            </div>
-           <div className="img_container col  p-md-4 p-3">
+           <div className="img_container p-5 ">
              <Link to="#">
                <img src={amazon} alt="amazon" className="card-img"/>
              </Link>
            </div>
-           <div className="img_container col  p-md-4 p-3">
+           <div className="img_container  p-5 ">
              <Link to="#" >
                <img src={adobe} alt="adobe" className="card-img"/>
              </Link>
            </div>
-           <div className="img_container col p-md-4 p-3">
+           <div className="img_container p-5">
              <Link to="#">
                <img src={notion} alt="notion" className="card-img" />
              </Link>
            </div>
-           <div className=" col p-md-4 p-3">
+           <div className=" p-5">
              <Link to="#">
                <img src={netflix} alt="netflix" className="card-img" />
              </Link>
@@ -92,7 +93,6 @@ function Home() {
       <PricingSection/>
       </div>
       <FAQSection/>
-      {/* <Sample/> */}
     </div>
   )
 }

@@ -4,6 +4,12 @@
     background-color: $orange;
 }
 
+.card_container{
+    .img_container{
+        border-right: 1px solid rgb(203, 200, 200);
+    }
+}
+
 
 @media (max-width:768px){
     .hero_section_heading {
@@ -25,9 +31,7 @@
             width: 100px;
         }
 
-        .img_container{
-            border-right: 1px solid rgb(203, 200, 200);
-        }
+      
 
     }
 

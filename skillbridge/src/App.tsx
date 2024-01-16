@@ -11,7 +11,6 @@ import About from './component/About/About';
 import CoursePage from './pages/Course/Course';
 import PricingPage from './pages/Pricing/PricingPage';
 import ContactPage from './pages/Contact/Contact';
-// import RegistrationForm from './ReactForm';
 
 
 
@@ -20,21 +19,21 @@ function App() {
   return (
     <div className="App">
       {/* <Router> */}
-        <AuthProvider>
-          <HeaderComponent />
-          <Routes>
-            <Route path='/' element={<Login/>} />
-            <Route element={<PrivateRoutes/>}>
-              <Route path='/signUp' element={<SignUp/>}/>
-              <Route path='/Home' element={<HomePage />} />
-              <Route path='/Course' element={<CoursePage/>}/>
-              <Route path='/About' element={<About/>}/>
-              <Route path='/Pricing' element={<PricingPage/>}/>
-              <Route path='/Contact' element={<ContactPage/>}/>
-            </Route>
-          </Routes>
-          <NewFooter />
-        </AuthProvider>
+      <AuthProvider>
+        <HeaderComponent />
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/signUp' element={<SignUp />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path='/home' element={<HomePage />} />
+            <Route path='/course' element={<CoursePage />} />
+            <Route path='/about' element={<About />} />
+            <Route path='pricing' element={<PricingPage />} />
+            <Route path='/contact' element={<ContactPage />} />
+          </Route>
+        </Routes>
+        <NewFooter />
+      </AuthProvider>
       {/* </Router> */}
     </div>
   );
