@@ -7,7 +7,7 @@ import TestimonialSection from '../TestimonialSection/TestimonialSection'
 import PricingSection from '../CommonFunctionalities/PricingSection/PricingSection'
 import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'
 import BenefitSection from '../BenefitSection/BenefitSection'
-import AnchorLink from "react-anchor-link-smooth-scroll";
+// import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 function Home() {
@@ -30,11 +30,11 @@ function Home() {
         <p className="text-center fw-medium text-wrap">Learn from Industry Experts
           and Enhance Your Skills.</p>
         <div className="view_pricing_explore_courses d-flex gap-3">
-          <Link to='courses' className="explore_courses_button rounded text-decoration-none text-white fw-medium border-0 p-2">Explore
-            Courses</Link>
-            <AnchorLink href='#courses'>courses</AnchorLink>
+          <a href='#courses' className="explore_courses_button rounded text-decoration-none text-white fw-medium border-0 p-2">Explore
+            Courses</a>
           <a href='#pricing' className="btn view_pricing_button text-decoration-none bg-white rounded border-0 fw-medium">View
             Pricing</a>
+            
         </div>
       </section>
 

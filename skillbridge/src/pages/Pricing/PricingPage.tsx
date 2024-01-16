@@ -1,7 +1,7 @@
 // import React from 'react';
-import Pricing from '../../component/Pricing/Pricing';
-import PricingSection from '../../component/CommonFunctionalities/PricingSection/PricingSection';
 import FAQSection from '../../component/CommonFunctionalities/FAQSection/FAQSection';
+import PricingSection from '../../component/CommonFunctionalities/PricingSection/PricingSection';
+import Pricing from '../../component/Pricing/Pricing';
 
 
 

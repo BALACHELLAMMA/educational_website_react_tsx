@@ -69,13 +69,13 @@ function Login() {
                 </p>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail"><b>Email</b> </label>
-                    <input type="email" className="form-control p-3" name="email"
+                    <input type="email" className="form-control p-3 shadow-none border-light" name="email"
                         id="exampleInputEmail" aria-describedby="emailHelp"
                         placeholder="Enter email" required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword"><b>Password</b></label>
-                    <input type="password" className="form-control p-3" name="password"
+                    <input type="password" className="form-control p-3 shadow-none border-light" name="password"
                         id="exampleInputPassword" placeholder="Password" required />
                 </div>
                 <div className="form-group d-flex gap-2 justify-content-end ">
@@ -95,7 +95,7 @@ function Login() {
                         src={googleLogo} className="pe-3" />Login Up with Google</button>
                 <div className="form-link">
                     <p className="text-center">Don't have an account?
-                    <Link to="/signup" className="text-black"> Sign Up
+                    <Link to="/signUp" className="text-black"> Sign Up
                                     <img src={loginArrow} alt="login" />
                     </Link>
                     

@@ -55,6 +55,12 @@ function HeaderComponent() {
                                 <li className="nav-item">
                                 <Link to="/Contact" className="nav-link">Contact Us</Link>
                                 </li>
+                                <li className="nav-item">
+                                <Link to="/Cart" className="nav-link">Cart</Link>
+                                </li>
+                                <li className="nav-item">
+                                <Link to="/signUp" className="nav-link">Sign up</Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -65,7 +71,7 @@ function HeaderComponent() {
                         :
                         (
                          <div>
-                             <Link to='/signup' className="sign_up_button bg-light rounded border-0 p-2 text-decoration-none text-black">Sign up</Link>
+                             <Link to='/signUp' className="sign_up_button bg-light rounded border-0 p-2 text-decoration-none text-black">Sign up</Link>
                              <Link to='/' className="login_button rounded border-0   text-white p-2 text-decoration-none">Login</Link>
                          </div>
                              )}

@@ -7,6 +7,11 @@ import NewFooter from '../src/component/Footer/Footer';
 import Login from './component/SignUp/Login';
 import { AuthProvider } from './utils/AuthContext';
 import PrivateRoutes from './utils/PrivateRoutes';
+import About from './component/About/About';
+import CoursePage from './pages/Course/Course';
+import PricingPage from './pages/Pricing/PricingPage';
+import ContactPage from './pages/Contact/Contact';
+// import RegistrationForm from './ReactForm';
 
 
 
@@ -20,8 +25,12 @@ function App() {
           <Routes>
             <Route path='/' element={<Login/>} />
             <Route element={<PrivateRoutes/>}>
-              <Route path='/signup' element={<SignUp/>}/>
+              <Route path='/signUp' element={<SignUp/>}/>
               <Route path='/Home' element={<HomePage />} />
+              <Route path='/Course' element={<CoursePage/>}/>
+              <Route path='/About' element={<About/>}/>
+              <Route path='/Pricing' element={<PricingPage/>}/>
+              <Route path='/Contact' element={<ContactPage/>}/>
             </Route>
           </Routes>
           <NewFooter />

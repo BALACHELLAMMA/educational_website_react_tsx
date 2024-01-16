@@ -18,7 +18,7 @@ function SignUp() {
     const registerForm = useRef(null)
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
     
         const name = registerForm.current.name.value
         const email = registerForm.current.email.value
@@ -80,20 +80,20 @@ function SignUp() {
                     Create an account to unlock exclusive features.
                 </p>
                 <div className="form-group">
-                    <label for="exampleInputName"><b>Name</b> </label>
-                    <input type="text" className="form-control p-3" name="name"
+                    <label htmlFor="exampleInputName"><b>Name</b> </label>
+                    <input type="text" className="form-control p-3 shadow-none border-light" name="name"
                         id="exampleInputName" aria-describedby="emailHelp"
                         placeholder="Enter name" required />
                 </div>
                 <div className="form-group">
-                    <label for="exampleInputEmail"><b>Email</b> </label>
-                    <input type="email" className="form-control p-3" name="email"
+                    <label htmlFor="exampleInputEmail"><b>Email</b> </label>
+                    <input type="email" className="form-control p-3 shadow-none border-light" name="email"
                         id="exampleInputEmail" aria-describedby="emailHelp"
                         placeholder="Enter email" required />
                 </div>
                 <div className="form-group">
-                    <label for="exampleInputPassword"><b>Password</b></label>
-                    <input type="password" className="form-control p-3" name="password"
+                    <label htmlFor="exampleInputPassword"><b>Password</b></label>
+                    <input type="password" className="form-control p-3 shadow-none border-light" name="password"
                         id="exampleInputPassword" placeholder="Password" required />
                 </div>
                 <div className="form-group d-flex gap-2">

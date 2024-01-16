@@ -2,12 +2,17 @@ import React, { useState } from 'react'
 import { plusIcon} from '../../../assets/resource/iconResource';
 import { faqForwardButton } from '../../../assets/resource/imgResource';
 import { FAQList } from '../../Data/FAQData';
+import useToggleState from '../Custom Hook/useToggleState';
+
+
 
 function FAQSection() {
-
+   
    //  const openCloseIcons = {plusIcon,closeIcon};
 
     const [showAnswer, setShowAnswer] = useState<number | null>(null);
+    const [viewAll, setViewAll] = useToggleState(false);
+
    //  const [selected, setSelected] = useState(openCloseIcons.plusIcon);
 
    //  function openAnswer(){
@@ -64,12 +69,13 @@ function FAQSection() {
                         support@skillbridge.com
                      </p>
                      <button className="btn fw-bold bg-light border p-2 "
-                        style={{width: "150px"}}>See All FAQ’s</button>
+                      onClick={setViewAll}  style={{width: "150px"}}>{viewAll?'See Less':'See All FAQ’s'}</button>
                   </div>
                </div>
             </div>
             <div className="col-md-7 d-flex flex-column gap-2">
-             {RenderFAQ}       
+             {RenderFAQ}
+             {viewAll && RenderFAQ}       
             </div>  
          </div>   
         </section>

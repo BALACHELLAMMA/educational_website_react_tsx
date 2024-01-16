@@ -1,10 +1,11 @@
 import React from 'react'
 import { Testimoniallist } from '../Data/TestimonialData'
+import useToggleState from '../CommonFunctionalities/Custom Hook/useToggleState';
 
 
+function TestimonialSection(): JSX.Element{
 
-function TestimonialSection() {
-
+    const [viewAll, setViewAll] = useToggleState(false);
 
     const RenderTestimonial = Testimoniallist.map((testimonial) => {
         return (
@@ -37,11 +38,12 @@ function TestimonialSection() {
                         senectus in.</p>
                     <div
                         className="col d-flex justify-content-md-end justify-content-sm-start mt-sm-2">
-                        <button className="bg-white border-0 rounded p-3"><b>View All</b></button>
+                    <button className="bg-white border-0 rounded p-3" onClick={setViewAll}>{viewAll ? 'View Less':'View All'}</button>
                     </div>
                 </section>
                 <div className="row">
                     {RenderTestimonial}
+                    {viewAll && RenderTestimonial}
                 </div>
             </div>
         </React.Fragment>
