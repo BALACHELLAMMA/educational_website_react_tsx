@@ -1,11 +1,11 @@
-import { Courselist } from '../Data/CourseData'
+import { courselist } from '../Data/CourseData'
 import useToggleState from '../CommonFunctionalities/Custom Hook/useToggleState';
 
 function CourseSection() :JSX.Element{
 
     const [viewAll, setViewAll] = useToggleState(false);
 
-    const RenderCourse = Courselist.map((course) => {
+    const renderCourse = courselist.map((course) => {
         return (
             <div className="col" key={course.id}>
                 <div className="card border-0 p-2">
@@ -44,8 +44,8 @@ function CourseSection() :JSX.Element{
                     </div>
                 </section>
                 <div className="row row-cols-1 row-cols-md-2 g-4">
-                    {RenderCourse}
-                    {viewAll && RenderCourse}
+                    {renderCourse}
+                    {viewAll ? renderCourse : null}
                 </div>
             </div>
         </>

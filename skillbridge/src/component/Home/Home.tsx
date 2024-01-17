@@ -1,19 +1,18 @@
 import "../Home/Home.scss"
 import { Link } from 'react-router-dom'
-import {LightiningIcon, zapier, spotify, netflix, notion, adobe, amazon, zoom} from "../../assets/resource/iconResource"
-import {AbstractIcon, videoImg } from "../../assets/resource/imgResource"
+import { LightiningIcon, zapier, spotify, netflix, notion, adobe, amazon, zoom } from "../../assets/resource/iconResource"
+import { AbstractIcon, videoImg } from "../../assets/resource/imgResource"
 import CourseSection from '../CourseSection/CourseSection'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
 import PricingSection from '../CommonFunctionalities/PricingSection/PricingSection'
 import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'
-import BenefitSection from '../BenefitSection/BenefitSection'
-import Sample from "./Sample"
-// import AnchorLink from "react-anchor-link-smooth-scroll";
+import BenefitList from "../BenefitSection/BenefitSection"
+
 
 
 function Home() {
   return (
-    <div className=''>
+    <div className='' id='home'>
       <section className="hero_section container 
       d-flex flex-column align-items-center justify-content-center">
         <div className="position-relative  p-4">
@@ -35,64 +34,70 @@ function Home() {
             Courses</a>
           <a href='#pricing' className="btn view_pricing_button text-decoration-none bg-white rounded border-0 fw-medium">View
             Pricing</a>
-            
+
         </div>
       </section>
 
       <section className="container card_section mt-5 mb-5">
-         <div
-           className="card_container  d-flex  bg-white rounded p-3">
-           <div className="img_container  p-5">
-             <Link to="#">
-               <img src={zapier} alt="zapier" className="card-img"/>
-             </Link>
-           </div>
-           <div className="img_container p-5">
-             <Link to="#">
-               <img src={spotify} alt="spotify" className="card-img" />
-             </Link>
-           </div>
-           <div className="img_container p-5">
-             <Link to="#">
-               <img src={zoom} alt="zoom" className="card-img" />
-             </Link>
-           </div>
-           <div className="img_container p-5 ">
-             <Link to="#">
-               <img src={amazon} alt="amazon" className="card-img"/>
-             </Link>
-           </div>
-           <div className="img_container  p-5 ">
-             <Link to="#" >
-               <img src={adobe} alt="adobe" className="card-img"/>
-             </Link>
-           </div>
-           <div className="img_container p-5">
-             <Link to="#">
-               <img src={notion} alt="notion" className="card-img" />
-             </Link>
-           </div>
-           <div className=" p-5">
-             <Link to="#">
-               <img src={netflix} alt="netflix" className="card-img" />
-             </Link>
-           </div>
-         </div>
-       </section>
-
-      <section className='container'>
-       <img src={videoImg} className="w-100"/>
+        <div
+          className="card_container  d-flex  bg-white rounded p-3">
+          <div className="img_container  p-5">
+            <Link to="#">
+              <img src={zapier} alt="zapier" className="card-img" />
+            </Link>
+          </div>
+          <div className="img_container p-5">
+            <Link to="#">
+              <img src={spotify} alt="spotify" className="card-img" />
+            </Link>
+          </div>
+          <div className="img_container p-5">
+            <Link to="#">
+              <img src={zoom} alt="zoom" className="card-img" />
+            </Link>
+          </div>
+          <div className="img_container p-5 ">
+            <Link to="#">
+              <img src={amazon} alt="amazon" className="card-img" />
+            </Link>
+          </div>
+          <div className="img_container  p-5 ">
+            <Link to="#" >
+              <img src={adobe} alt="adobe" className="card-img" />
+            </Link>
+          </div>
+          <div className="img_container p-5">
+            <Link to="#">
+              <img src={notion} alt="notion" className="card-img" />
+            </Link>
+          </div>
+          <div className=" p-5">
+            <Link to="#">
+              <img src={netflix} alt="netflix" className="card-img" />
+            </Link>
+          </div>
+        </div>
       </section>
 
-      <BenefitSection/>
+      <section className='container'>
+        <img src={videoImg} className="w-100" />
+      </section>
+
+      <div id="benefits">
+        <BenefitList />
+      </div>
       <div id="courses">
-        <CourseSection/>
+        <CourseSection />
       </div>
-      <TestimonialSection/>
+      <div id="testimonials">
+        <TestimonialSection />
+      </div>
       <div id='pricing'>
-      <PricingSection/>
+        <PricingSection />
       </div>
-      <FAQSection/>
+      <div id="faq">
+        <FAQSection />
+      </div>
     </div>
   )
 }

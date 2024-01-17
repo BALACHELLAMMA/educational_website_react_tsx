@@ -1,18 +1,17 @@
 import React from 'react'
-import { Benefitlist } from '../Data/BenefitData'
+import { benefits } from '../Data/BenefitData'
 import { benefitIcon } from '../../assets/resource/iconResource';
-// import '../BenefitSection/BenefitSection.scss'
 import useToggleState from '../CommonFunctionalities/Custom Hook/useToggleState';
 
-function BenefitSection() {
+function BenefitList() {
     
     const [viewAll, setViewAll] = useToggleState(false);
 
-    const RenderBenefitSection=() => {
+    const BenefitSection=() => {
         return(
             <div className='d-flex flex-column gap-2'>
             <div className="row gap-1">
-                {Benefitlist.filter(benefit => {
+                {benefits.filter(benefit => {
                     return (benefit.id <= 3);
                 }).map((benefit) => (
                         <div  className="col-md  benefit_sub_container bg-white   p-4 rounded ms-1"
@@ -31,7 +30,7 @@ function BenefitSection() {
                 ))}
             </div>
             <div className="row gap-1">
-                {Benefitlist.filter(benefit => {
+                {benefits.filter(benefit => {
                     return (benefit.id >3);
                 }).map((benefit) => (
                           <div className="col-md benefit_sub_container bg-white  p-4 rounded ms-1"
@@ -49,7 +48,7 @@ function BenefitSection() {
                         </div>
                 ))}
             </div>
-        </div>   
+            </div>   
         );
     }
     return (
@@ -67,11 +66,11 @@ function BenefitSection() {
                         <button className="bg-white border-0 rounded p-3" onClick={setViewAll}>{viewAll ? 'View Less':'View All'}</button>
                     </div>
                 </section>
-                <RenderBenefitSection/>
-                {viewAll && <RenderBenefitSection/>}
+                <BenefitSection/>
+                {viewAll ? <BenefitSection/>:null}
             </div>
         </React.Fragment>
     )
 }
 
-export default BenefitSection;
+export default BenefitList;

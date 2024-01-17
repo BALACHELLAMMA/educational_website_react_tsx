@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import { closeIcon, plusIcon } from '../../../assets/resource/iconResource';
 import { faqForwardButton } from '../../../assets/resource/imgResource';
-import { FAQList } from '../../Data/FAQData';
+import { faqList } from '../../Data/FAQData';
 
 
 type ActionType =
@@ -29,15 +29,16 @@ const faqReducer = (state: State, action: ActionType): State => {
   }
 };
 
+const initialState: State = {
+  showAnswer: null,
+  viewAll: false,
+};
+
 function FAQSection() {
-  const initialState: State = {
-    showAnswer: null,
-    viewAll: false,
-  };
 
   const [state, dispatch] = useReducer(faqReducer, initialState);
 
-  const RenderFAQ = FAQList.map((FAQ) => {
+  const renderFAQ = faqList.map((FAQ) => {
     return (
       <div className='FAQ_container card p-1 border' key={FAQ.id}>
         <div className="d-flex flex-column  gap-4 rounded align-content-center p-2">
@@ -58,7 +59,7 @@ function FAQSection() {
               />
             </button>
           </div>
-          {state.showAnswer === FAQ.id && (
+          {state.showAnswer === FAQ.id ? (
             <div className="answer_container border-top py-3">
               <p className="fw-medium px-2">{FAQ.answer}</p>
               <div className="bg-light d-flex justify-content-between border rounded align-content-center p-2 ">
@@ -68,7 +69,7 @@ function FAQSection() {
                 </button>
               </div>
             </div>
-          )}
+          ):null}
         </div>
       </div>
     );
@@ -94,8 +95,8 @@ function FAQSection() {
             </div>
           </div>
           <div className="col-md-7 d-flex flex-column gap-2">
-            {RenderFAQ}
-            {state.viewAll && RenderFAQ}
+            {renderFAQ}
+            {state.viewAll ? renderFAQ :null}
           </div>
         </div>
       </section>

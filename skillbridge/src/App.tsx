@@ -1,10 +1,10 @@
 import './App.css';
 import { Route, Routes } from "react-router-dom";
 import HeaderComponent from './component/Header/HeaderComponent';
-import SignUp from './component/SignUp/SignUp';
+import SignUp from './component/Auth/SignUp';
 import HomePage from './pages/Home/Home';
 import NewFooter from '../src/component/Footer/Footer';
-import Login from './component/SignUp/Login';
+import Login from './component/Auth/Login';
 import { AuthProvider } from './utils/AuthContext';
 import PrivateRoutes from './utils/PrivateRoutes';
 import About from './component/About/About';

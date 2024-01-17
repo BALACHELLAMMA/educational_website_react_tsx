@@ -1,11 +1,11 @@
-interface Benefitlist {
+interface benefits {
     id:number,
     benefit_number : String,
     title : String,
     desc : String
 }
 
-export const Benefitlist = [
+export const benefits = [
     {
        id:1,
        benefit_number : '01',

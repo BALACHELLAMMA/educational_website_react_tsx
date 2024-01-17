@@ -1,11 +1,11 @@
 import React from 'react'
 import './PricingSection.scss'
-import { PricingFeaturesData } from '../../Data/PricingFeaturesData';
+import { pricingFeaturesData } from '../../Data/PricingFeaturesData';
 
 
 function PricingSection() {
 
-  const RenderPricingFeatures = PricingFeaturesData.map((feature)=>{
+  const renderPricingFeatures = pricingFeaturesData.map((feature)=>{
      return(
         <div className="col" key={feature.id}>
         <div className="card border-0 p-2 bg-light">
@@ -80,7 +80,7 @@ function PricingSection() {
             </div>
          </section>
          <div className='row row-cols-1 row-cols-md-2 g-4 bg-white rounded p-4'>
-            {RenderPricingFeatures}
+            {renderPricingFeatures}
          </div>
          </div>
     </React.Fragment>

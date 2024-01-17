@@ -1,4 +1,4 @@
-export const DescriptionList = [
+export const descriptionList = [
     {
         id:1,
         title:'pricing',

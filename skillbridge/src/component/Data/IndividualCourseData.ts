@@ -1,4 +1,4 @@
-export const IndividualCourseData = [
+export const individualCourseData = [
     {
         id:"01",
         heading:'Introduction to UI/Ux Design ',

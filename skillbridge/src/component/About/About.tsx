@@ -1,10 +1,10 @@
 import './About.scss';
-import { DescriptionList } from '../Data/Description';
-import { AboutContentList } from '../Data/AboutContent';
+import { descriptionList } from '../Data/Description';
+import { aboutContentList } from '../Data/AboutContent';
 import {AbstractDesign} from '../../assets/resource/imgResource'
 
 const About = ()=> {
-  const RenderAbout = AboutContentList.map((item) => {
+  const RenderAbout = aboutContentList.map((item) => {
     return (
       <section className='content mt-5 mb-5'>
         <h2>{item.title}</h2>
@@ -44,7 +44,7 @@ const About = ()=> {
   })
   return (
     <div>
-      {DescriptionList.filter(description => {
+      {descriptionList.filter(description => {
         return (description.title === 'about')
       }).map((description) => {
         return (
@@ -75,7 +75,7 @@ const About = ()=> {
           <div className='d-flex  flex-sm-wrap-reverse flex-md-nowrap col-12 col-md-6 row'>
           <div className='border col'>
             <img src={AbstractDesign} alt='abstract_image' 
-            id='abstractDesign' style={{width:"100%"}}/>
+            id='abstractDesign' style={{width:"100%"}} />
           </div>
             <div className='d-flex  align-items-center justify-content-center col-md-3 col-6 order-first order-md-1 border '>
             <button className='btn bg-warning text-white ' style={{width:"100px"}}>Join Now</button>

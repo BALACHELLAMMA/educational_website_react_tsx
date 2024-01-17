@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useAuth } from '../../utils/AuthContext';
 import logo from '../../assets/img/Logo.svg'
 import hamburger from '../../assets/img/hamburger.svg'
@@ -67,9 +67,6 @@ function HeaderComponent() {
                                 <li className="nav-item">
                                     <Link to="/contact" className="nav-link">Contact Us</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link to="/signUp" className="nav-link">Sign up</Link>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -79,11 +76,11 @@ function HeaderComponent() {
                         )
                             :
                             (
-                                <div>
-                                    <Link to='/signUp' className={linkClassName('/signUp')}>
+                                <div className="d-flex gap-2">
+                                    <NavLink to='/signUp' className="signupLink">
                                         Sign Up
-                                    </Link>
-                                    <Link to='/' className={linkClassName('/')}>
+                                    </NavLink>
+                                    <Link to='/' className="loginLink">
                                         Login
                                     </Link>
                                 </div>

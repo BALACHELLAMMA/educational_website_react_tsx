@@ -28,6 +28,7 @@ export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
   const [user,setUser] = useState<any>(null);
 
   useEffect(()=>{
+    localStorage.clear();
     setLoading(false);
     checkUserStatus();
   },[]);

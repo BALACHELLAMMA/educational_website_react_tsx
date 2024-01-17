@@ -10,11 +10,11 @@ function CourseContent() {
 
     return (
         <div>
-            {course === 'courses' && (
+            {course === 'courses' ? (
                 <Course viewCourse={() => setCourse('coursePage')} />
-            )}
+            ):(<CourseOpenPage/>)}
 
-            {course === 'coursePage' && <CourseOpenPage />}
+            {/* {course === 'coursePage' && <CourseOpenPage />} */}
         </div>
     );
 }

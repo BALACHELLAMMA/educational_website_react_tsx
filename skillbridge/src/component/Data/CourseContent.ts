@@ -1,6 +1,6 @@
 import { webDesignImage1,webDesignImage2,webDesignImage3, UIUXImage1, UIUXImage2, UIUXImage3, MobileDevelopmentImage1, MobileDevelopmentImage2, MobileDevelopmentImage3, graphicDesignImage1, graphicDesignImage2, graphicDesignImage3, frontEndDevelopmentImage1, frontEndDevelopmentImage2, frontEndDevelopmentImage3 } from "../../assets/resource/imgResource";
 
-export const CourseList = [
+export const courseList = [
     {
         id:1,
         title:"Web Design Fundamentals",

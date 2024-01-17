@@ -4,6 +4,7 @@ import { logo } from '../../assets/resource/imgResource';
 import { Link } from 'react-router-dom';
 
 
+
 function Footer() {
   return (
     <div className='footer mt-5  bg-white '>
@@ -31,11 +32,11 @@ function Footer() {
         <section className='LinksContainer col-12 col-md-7 row '>
           <div className='HomeAbout  col-12 col-md-8 row '>
             <div className='Home col-6 d-flex flex-column flex-nowrap'>
-              <p className='fw-bold'>Home</p>
-              <Link to='' className='text-decoration-none text-secondary'>Benefits</Link>
-              <Link to='' className='text-decoration-none text-secondary'>Our Courses</Link>
-              <Link to='' className='text-decoration-none text-secondary'>Our Testimonials</Link>
-              <Link to='' className='text-decoration-none text-secondary'>Our FAQ</Link>
+              <Link to='/home' className='fw-bold text-black text-decoration-none'>Home</Link>
+              <Link to='/home#benefits' className='text-decoration-none text-secondary'>Benefits</Link>
+              <a href='/home#courses' className='text-decoration-none text-secondary'>Our Courses</a>
+              <a href='/home#testimonials' className='text-decoration-none text-secondary'>Our Testimonials</a>
+              <a href='/home#faq' className='text-decoration-none text-secondary'>Our FAQ</a>
             </div>
             <div className='About col-6 d-flex flex-column flex-nowrap'>
               <p className='fw-bold'>About Us</p>
@@ -63,6 +64,9 @@ function Footer() {
       </section>
       <section className="bottom_footer border-top p-3 mt-2">
         <p className="text-center">© 2023 Skillbridge. All rights reserved.</p>
+
+
+
       </section>
 
     </div>

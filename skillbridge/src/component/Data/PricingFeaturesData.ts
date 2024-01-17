@@ -1,6 +1,6 @@
 import { available_icon, unavailable_icon } from "../../assets/resource/iconResource";
 
-export const PricingFeaturesData = [
+export const pricingFeaturesData = [
     {
         id:1,
         plan : 'Free Plan',

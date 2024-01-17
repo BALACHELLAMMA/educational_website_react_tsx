@@ -1,4 +1,4 @@
-export const FAQList = [
+export const faqList = [
     {
         id:1,
         question:'Can I enroll in multiple courses at once?',

@@ -3,11 +3,11 @@ import { useRef } from 'react';
 import { ID } from 'appwrite';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
-import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { databases } from '../../appwriteConfig';
-import { DescriptionList } from '../Data/Description';
+import { descriptionList } from '../Data/Description';
 import { locationIcon, phoneIcon, mailIcon, linkedInIcon, facebookIcon, twitterIcon } from '../../assets/resource/iconResource';
+import { ToastContainer,toast } from 'react-toastify';
  
 
 interface FormData {
@@ -42,9 +42,9 @@ function Contact() {
 
       }
 
-      const createDocumentPromise = databases.createDocument(
+      const promise = databases.createDocument(
         '65a0d58f05d18f1fd844',
-        '65a0d59c43ee4382fe65',
+        '65a765dfe6039fba1743',
         ID.unique(),
         {
           "firstname": formData.firstnameInput,
@@ -55,8 +55,7 @@ function Contact() {
           "message": formData.messageInput
         }
       );
-      createDocumentPromise.then(function (response) {
-        console.log("Response : ",response);
+        toast.success("Submitted Sucessfully");
         firstNameRef.current.value='';
         lastNameRef.current.value='';
         emailRef.current.value='';
@@ -64,13 +63,8 @@ function Contact() {
         subjectRef.current.value='';
         messageRef.current.value='';
 
-        toast.success("Submitted Successfully");
-        
-      }, function (error) {
-        console.log(error);
-      });
 
-      console.log('Document created:', createDocumentPromise);
+      console.log('Document created:', promise);
     }
     catch (error) {
       console.error('Error creating document:', error);
@@ -79,11 +73,11 @@ function Contact() {
   return (
     <>
       <div>
-        {DescriptionList.filter(description => {
+        {descriptionList.filter(description => {
           return (description.title === 'contact')
         }).map((description) => {
           return (
-            <section className="description_section container mt-5 mb-5 border-bottom">
+            <section className="description_section container mt-5 mb-5 border-bottom" key={description.id}>
               <div className="description_container row ">
                 <h1 className="col-md-6 col-12">{description.heading}</h1>
                 <p className="col-md-6 col-12">{description.content}</p>
@@ -97,7 +91,7 @@ function Contact() {
       <div className='container'>
         <div className='row row-cols-2 d-flex rounded bg-white p-2'>
           <section className='contact col-12 col-md-8  p-4' id='form_section'>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className='contactForm'>
               <div className='row row-cols-md-2 '>
                 <Form.Group className="mb-3" controlId="firstNameInput">
                   <Form.Label className='fw-medium'>First Name</Form.Label>
@@ -136,11 +130,11 @@ function Contact() {
                   className='formInput' ref={messageRef} />
               </Form.Group>
               <div className='d-flex justify-content-center'>
-                <Button type="submit" className='send_message_button border-0 justify-content-end text-white'
+                <Button type='submit' className='send_message_button border-0 justify-content-end text-white'
                 >
                   Send Your Message
-                </Button>
                 <ToastContainer/>
+                </Button>
               </div>
             </Form>
           </section>

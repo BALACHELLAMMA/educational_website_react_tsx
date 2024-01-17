@@ -1,13 +1,14 @@
 // import React from 'react';
-import { CourseList } from '../Data/CourseContent';
-import { DescriptionList } from '../Data/Description';
+import { courseList } from '../Data/CourseContent';
+import { descriptionList } from '../Data/Description';
+
 interface CourseProps {
    viewCourse: () => void; 
-   // Adjust the type according to your requirements
 }
+
 const Course: React.FC<CourseProps> = (props)=>{
  
-   const renderCourseList = CourseList.map((course)=>{
+   const renderCourseList = courseList.map((course)=>{
     return(
       <section className="course_section container bg-white  p-3 mt-3 mb-3 rounded d-flex flex-column
       gap-4" key={course.id}>
@@ -76,7 +77,7 @@ const Course: React.FC<CourseProps> = (props)=>{
 
    return (
          <div className='bg-light'>
-         {DescriptionList.filter(description=>{
+         {descriptionList.filter(description=>{
           return(description.title==='course')
          }).map((description)=>{
             return(

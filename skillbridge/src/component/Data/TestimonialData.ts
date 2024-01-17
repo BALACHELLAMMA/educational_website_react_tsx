@@ -1,5 +1,5 @@
 import { SarahImg, JasonImage, EmilyImage, MichaelImage } from "../../assets/resource/imgResource";
-export const Testimoniallist = [
+export const testimoniallist = [
     {
         id:1,
         name:"Sarah L",

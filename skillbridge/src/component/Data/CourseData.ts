@@ -1,6 +1,6 @@
 import { webDesignImage, uiuxImage, frontEndImage, mobileDevelopmentImage,advanceJsImage, graphicDesignImage } from "../../assets/resource/imgResource";
 
-export const Courselist = [
+export const courselist = [
       {
         id: 1,
         weeks:'4 weeks',

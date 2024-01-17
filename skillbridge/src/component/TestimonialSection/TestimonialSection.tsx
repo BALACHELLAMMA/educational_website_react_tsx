@@ -1,5 +1,5 @@
 import React from 'react'
-import { Testimoniallist } from '../Data/TestimonialData'
+import { testimoniallist } from '../Data/TestimonialData'
 import useToggleState from '../CommonFunctionalities/Custom Hook/useToggleState';
 
 
@@ -7,7 +7,7 @@ function TestimonialSection(): JSX.Element{
 
     const [viewAll, setViewAll] = useToggleState(false);
 
-    const RenderTestimonial = Testimoniallist.map((testimonial) => {
+    const renderTestimonial = testimoniallist.map((testimonial) => {
         return (
             <div className="col-sm-6 mt-3 " key={testimonial.id}>
             <div className="card border-0">
@@ -42,8 +42,8 @@ function TestimonialSection(): JSX.Element{
                     </div>
                 </section>
                 <div className="row">
-                    {RenderTestimonial}
-                    {viewAll && RenderTestimonial}
+                    {renderTestimonial}
+                    {viewAll ? renderTestimonial:null}
                 </div>
             </div>
         </React.Fragment>

@@ -1,6 +1,6 @@
 import '../Course/Course.scss'
-import { DescriptionList } from '../Data/Description';
-import { IndividualCourseData } from '../Data/IndividualCourseData';
+import { descriptionList } from '../Data/Description';
+import { individualCourseData } from '../Data/IndividualCourseData';
 import {uiux_design } from '../../assets/resource/imgResource';
 import { clock_icon } from '../../assets/resource/iconResource';
 
@@ -8,7 +8,7 @@ import { clock_icon } from '../../assets/resource/iconResource';
 function CourseOpenPage() {
     return (
         <div>
-            {DescriptionList.filter(description => {
+            {descriptionList.filter(description => {
                 return (description.title === 'coursepage')
             }).map((description) => {
                 return (
@@ -28,7 +28,7 @@ function CourseOpenPage() {
 
             <div className='d-flex flex-column gap-2 container mt-5 mb-5'>
                 <div className="row row-cols-1 row-cols-md-2 g-4">
-                    {IndividualCourseData.map((course) => {
+                    {individualCourseData.map((course) => {
                         return (
                             <div className="col">
                                 <div className="card border-0 p-2">
@@ -144,14 +144,3 @@ function CourseOpenPage() {
 
 export default CourseOpenPage;
 
-{/* <div className='col card p-3'>
-<div className='d-flex justify-content-end'><h1>01</h1></div>
-<h4>Introduction to UI/UX Design</h4>
-<div className='d-flex align-items-start justify-content-between border p-2 rounded'>
-   <div>
-       <h5>Introduction to uiux principle</h5>
-       <p>Lesson 01</p>
-   </div>
-   <button className='btn btn-light'><img src={clock_icon}/>1 Hour</button>
-</div>
-</div>  */}

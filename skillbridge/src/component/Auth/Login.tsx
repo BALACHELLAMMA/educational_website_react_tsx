@@ -1,38 +1,26 @@
-import React, { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { useAuth } from '../../utils/AuthContext'
-import '../SignUp/SignUp.css'
+import './SignUp.scss'
+import { useAuth } from "../../utils/AuthContext";
+import { useRef } from "react";
+import {SarahImg, forwardArrow, backwardArrow, googleLogo,loginArrow} from '../../assets/resource/imgResource'
+import { Link } from 'react-router-dom';
+
+function Login() {
+    const { user, loginUser } = useAuth()
+
+    const loginForm = useRef(null)
 
 
-import sarahImg from '../../assets/img/Sarah L.svg'
-import backwardArrow from '../../assets/img/backward_arrow.svg'
-import forwardArrow from '../../assets/img/forward_arrow.svg'
-import loginArrow from '../../assets/img/login_arrow.svg'
-import googleLogo from '../../assets/img/google_logo.svg'
+    const handleSubmit = (e:any) => {
+        e.preventDefault()
+        const email = loginForm.current.email.value
+        const password = loginForm.current.password.value
 
+        const userInfo = { email, password }
 
+        loginUser(userInfo)
 
-
-function SignUp() {
-    const {registerUser} = useAuth()
-    const registerForm = useRef(null)
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    
-        const name = registerForm.current.name.value
-        const email = registerForm.current.email.value
-        const password = registerForm.current.password.value
-        // const password2 = registerForm.current.password2.value
-    
-        // if(password1 !== password2){
-        //     alert('Passwords did not match!')
-        //     return 
-        // }
-        
-        const userInfo = {name, email, password}
-    
-        registerUser(userInfo)
+        // const navigateHome = useNavigate();
+        // navigateHome('/home')
     }
     return (
         <div className='bg-light '>
@@ -58,7 +46,7 @@ function SignUp() {
                       d-flex justify-content-between ">
                         <div
                             className="profile  d-flex gap-3 align-items-center">
-                            <img src={sarahImg} alt="avatar" />
+                            <img src={SarahImg} alt="avatar" />
                             <p className="mt-3">Sarah L</p>
                         </div>
                         <button
@@ -73,18 +61,12 @@ function SignUp() {
                         src={forwardArrow} /></button>
                 </div>
             </section>
-            <form ref={registerForm} onSubmit={handleSubmit}
+            <form onSubmit={handleSubmit} ref={loginForm}
                 className=" col-md-5 border order-first order-md-1 bg-white d-flex flex-column gap-3 p-4 rounded">
-                <span className="h3 text-center"><b>Sign Up</b></span>
+                <span className="h3 text-center"><b>Login</b></span>
                 <p className="create_account text-center">
-                    Create an account to unlock exclusive features.
+                    Welcome back! please login to your account.
                 </p>
-                <div className="form-group">
-                    <label htmlFor="exampleInputName"><b>Name</b> </label>
-                    <input type="text" className="form-control p-3 shadow-none border-light" name="name"
-                        id="exampleInputName" aria-describedby="emailHelp"
-                        placeholder="Enter name" required />
-                </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail"><b>Email</b> </label>
                     <input type="email" className="form-control p-3 shadow-none border-light" name="email"
@@ -96,23 +78,27 @@ function SignUp() {
                     <input type="password" className="form-control p-3 shadow-none border-light" name="password"
                         id="exampleInputPassword" placeholder="Password" required />
                 </div>
+                <div className="form-group d-flex gap-2 justify-content-end ">
+                    <a href="#" className="forgot_password text-secondary text-decoration-none">forgot password ? </a>
+                </div>
                 <div className="form-group d-flex gap-2">
                     <input type="checkbox" />
-                    <label>I agree with <a href="#" className="terms_of_use ">Terms of Use </a>and <a href="#" className="privacy_policy"> Privacy Policy</a></label>
+                    <label className='text-secondary fw-medium'>Remember me</label>
                 </div>
                 <button type="submit"
-                    className="sign_up_submit_button border-0 rounded w-100 text-white mb-2 p-3">Sign Up</button>
+                    className="sign_up_submit_button border-0 rounded w-100 text-white mb-2 p-3">Login</button>
                 <div className="border-0 border-bottom pb-3 text-center position-relative">
                     <span className="position-absolute top-100 translate-middle bg-white p-2">Or</span>
                 </div>
                 <button type="submit"
                     className="google_sign_up_button border-0 rounded w-100 mt-2 p-3"><img
-                        src={googleLogo} className="pe-3" />Sign Up with Google</button>
+                        src={googleLogo} className="pe-3" />Login Up with Google</button>
                 <div className="form-link">
-                    <p className="text-center">Already have an account?
-                        <Link to="/" className="text-black"> Login
-                            <img src={loginArrow} alt="login" />
-                        </Link>
+                    <p className="text-center">Don't have an account?
+                    <Link to="/signUp" className="text-black"> Sign Up
+                                    <img src={loginArrow} alt="login" />
+                    </Link>
+                    
                     </p>
                 </div>
             </form>
@@ -122,4 +108,4 @@ function SignUp() {
     )
 }
 
-export default SignUp
+export default Login;
