@@ -26,3 +26,5 @@ export {default as  unavailable_icon} from '../../assets/icons/unavailable_icon.
 export {default as closeIcon} from "../../assets/icons/close_icon.svg"
 export {default as plusIcon} from "../../assets/icons/plus_icon.svg"
 export {default as clock_icon} from "../../assets/icons/clock_icon.svg";
+export {default as hide_password_icon} from '../icons/hide_password_icon.png';
+export {default as open_password_icon} from '../icons/open_password_icon.png';

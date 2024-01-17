@@ -104,6 +104,7 @@ function Contact() {
                     placeholder="Enter First Name"
                     className="formInput"
                     ref={firstNameRef}
+                    required
                   />
                 </Form.Group>
 
@@ -114,6 +115,7 @@ function Contact() {
                     placeholder="Enter Last Name"
                     className="formInput"
                     ref={lastNameRef}
+                    required
                   />
                 </Form.Group>
 
@@ -124,6 +126,7 @@ function Contact() {
                     placeholder="Enter Your Email"
                     className="formInput"
                     ref={emailRef}
+                    required
                   />
                 </Form.Group>
 
@@ -134,6 +137,7 @@ function Contact() {
                     placeholder="Enter Phonenumber"
                     className="formInput"
                     ref={phoneRef}
+                    required
                   />
                 </Form.Group>
               </div>
@@ -145,6 +149,7 @@ function Contact() {
                   placeholder="Enter your Subject"
                   className="formInput"
                   ref={subjectRef}
+                  required
                 />
               </Form.Group>
 
@@ -159,6 +164,7 @@ function Contact() {
                   placeholder="Enter your Message here..."
                   className="formInput"
                   ref={messageRef}
+                  required
                 />
               </Form.Group>
               <div className="d-flex justify-content-center">

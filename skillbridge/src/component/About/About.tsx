@@ -4,7 +4,7 @@ import { aboutContentList } from '../Data/AboutContent';
 import {AbstractDesign} from '../../assets/resource/imgResource'
 
 const About = ()=> {
-  const RenderAbout = aboutContentList.map((item) => {
+  const renderAbout = aboutContentList.map((item) => {
     return (
       <section className='content mt-5 mb-5'>
         <h2>{item.title}</h2>
@@ -60,7 +60,7 @@ const About = ()=> {
 
       <section className='container bg-light'>
         <div className='d-flex flex-column gap-3'>
-          {RenderAbout}
+          {renderAbout}
         </div>
       </section>
 
