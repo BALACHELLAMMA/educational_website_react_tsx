@@ -1,16 +1,16 @@
 import React from 'react'
-import '../PricingSection/PricingSection.css'
-import { PricingFeaturesData } from '../Data/PricingFeaturesData';
+import './PricingSection.scss'
+import { PricingFeaturesData } from '../../Data/PricingFeaturesData';
 
 
 function PricingSection() {
 
   const RenderPricingFeatures = PricingFeaturesData.map((feature)=>{
      return(
-        <div className="col">
+        <div className="col" key={feature.id}>
         <div className="card border-0 p-2 bg-light">
            <div className="card-body d-flex flex-column">
-              <div className="bg-light rounded">
+              <div className="plan_container bg-light rounded">
                  <h3 className="plan_type p-3 rounded text-center">{feature.plan}</h3>
                  <div className="text-center p-4"> <h2>
                        <span className="price fw-bold">${feature.price}</span>
@@ -72,7 +72,7 @@ function PricingSection() {
          <section
             className="pricing_description d-flex justify-content-md-center row mb-5">
             <div
-               className='bg-white rounded d-flex gap-1  mt-sm-2 p-2'
+               className='monthly_yearly_button bg-white rounded d-flex gap-1  mt-sm-2 p-2'
                style={{width: "200px"}}>
                <button className="monthly_button text-white border-0 rounded p-3" 
               ><b>Monthly</b></button>

@@ -1,5 +1,5 @@
-import './About.css';
-import { DescriptionList } from '../Description/Description';
+import './About.scss';
+import { DescriptionList } from '../Data/Description';
 import { AboutContentList } from '../Data/AboutContent';
 import {AbstractDesign} from '../../assets/resource/imgResource'
 

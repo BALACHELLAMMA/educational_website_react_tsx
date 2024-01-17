@@ -1,0 +1,13 @@
+@import "../Scss/main.scss";
+
+.contact {
+    .send_message_button{
+        background-color: var(--orange);
+    }
+
+    .formInput, .card{
+        background: var(--contrastWhite);
+        border: 1px solid rgba(0, 0, 0, 0.074);
+    }
+}
+

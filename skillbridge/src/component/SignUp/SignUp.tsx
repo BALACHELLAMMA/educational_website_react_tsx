@@ -1,8 +1,39 @@
-// import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { useAuth } from '../../utils/AuthContext'
 import '../SignUp/SignUp.css'
-import {SarahImg, forwardArrow, backwardArrow, googleLogo,loginArrow} from '../../assets/resource/imgResource'
+
+
+import sarahImg from '../../assets/img/Sarah L.svg'
+import backwardArrow from '../../assets/img/backward_arrow.svg'
+import forwardArrow from '../../assets/img/forward_arrow.svg'
+import loginArrow from '../../assets/img/login_arrow.svg'
+import googleLogo from '../../assets/img/google_logo.svg'
+
+
+
 
 function SignUp() {
+    const {registerUser} = useAuth()
+    const registerForm = useRef(null)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        const name = registerForm.current.name.value
+        const email = registerForm.current.email.value
+        const password = registerForm.current.password.value
+        // const password2 = registerForm.current.password2.value
+    
+        // if(password1 !== password2){
+        //     alert('Passwords did not match!')
+        //     return 
+        // }
+        
+        const userInfo = {name, email, password}
+    
+        registerUser(userInfo)
+    }
     return (
         <div className='bg-light '>
         <div className='hero_section container bg-light mb-5'>
@@ -27,7 +58,7 @@ function SignUp() {
                       d-flex justify-content-between ">
                         <div
                             className="profile  d-flex gap-3 align-items-center">
-                            <img src={SarahImg} alt="avatar" />
+                            <img src={sarahImg} alt="avatar" />
                             <p className="mt-3">Sarah L</p>
                         </div>
                         <button
@@ -42,7 +73,7 @@ function SignUp() {
                         src={forwardArrow} /></button>
                 </div>
             </section>
-            <form
+            <form ref={registerForm} onSubmit={handleSubmit}
                 className=" col-md-5 border order-first order-md-1 bg-white d-flex flex-column gap-3 p-4 rounded">
                 <span className="h3 text-center"><b>Sign Up</b></span>
                 <p className="create_account text-center">
@@ -50,19 +81,19 @@ function SignUp() {
                 </p>
                 <div className="form-group">
                     <label htmlFor="exampleInputName"><b>Name</b> </label>
-                    <input type="text" className="form-control p-3"
+                    <input type="text" className="form-control p-3 shadow-none border-light" name="name"
                         id="exampleInputName" aria-describedby="emailHelp"
                         placeholder="Enter name" required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail"><b>Email</b> </label>
-                    <input type="email" className="form-control p-3"
+                    <input type="email" className="form-control p-3 shadow-none border-light" name="email"
                         id="exampleInputEmail" aria-describedby="emailHelp"
                         placeholder="Enter email" required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword"><b>Password</b></label>
-                    <input type="password" className="form-control p-3"
+                    <input type="password" className="form-control p-3 shadow-none border-light" name="password"
                         id="exampleInputPassword" placeholder="Password" required />
                 </div>
                 <div className="form-group d-flex gap-2">
@@ -79,9 +110,9 @@ function SignUp() {
                         src={googleLogo} className="pe-3" />Sign Up with Google</button>
                 <div className="form-link">
                     <p className="text-center">Already have an account?
-                        <a href="index.html" className="text-black"> Login
+                        <Link to="/" className="text-black"> Login
                             <img src={loginArrow} alt="login" />
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </form>

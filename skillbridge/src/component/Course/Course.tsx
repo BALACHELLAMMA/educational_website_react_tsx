@@ -1,6 +1,6 @@
 // import React from 'react';
 import { CourseList } from '../Data/CourseContent';
-import { DescriptionList } from '../Description/Description';
+import { DescriptionList } from '../Data/Description';
 interface CourseProps {
    viewCourse: () => void; 
    // Adjust the type according to your requirements
@@ -10,7 +10,7 @@ const Course: React.FC<CourseProps> = (props)=>{
    const renderCourseList = CourseList.map((course)=>{
     return(
       <section className="course_section container bg-white  p-3 mt-3 mb-3 rounded d-flex flex-column
-      gap-4">
+      gap-4" key={course.id}>
                <h1>{course.title}</h1>
          <section
             className="course_description d-flex justify-content-between row mb-2"

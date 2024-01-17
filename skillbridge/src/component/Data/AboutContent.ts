@@ -1,6 +1,12 @@
 import { goalIcon1, goalIcon2, goalIcon3, goalIcon4,
          achievementIcon1, achievementIcon2,achievementIcon3, achievementIcon4 } from "../../assets/resource/iconResource"; 
 
+interface AboutContentList{
+   id:number,
+   title:String,
+   desc:String,
+   content:Object,
+}
 
 export const AboutContentList = [
     {

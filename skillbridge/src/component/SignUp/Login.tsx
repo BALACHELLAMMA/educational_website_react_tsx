@@ -1,7 +1,27 @@
-import '../SignUp/SignUp.css'
+import '../SignUp/SignUp.scss'
+import { useAuth } from "../../utils/AuthContext";
+import { useRef } from "react";
 import {SarahImg, forwardArrow, backwardArrow, googleLogo,loginArrow} from '../../assets/resource/imgResource'
+import { Link } from 'react-router-dom';
 
 function Login() {
+    const { user, loginUser } = useAuth()
+    //Add loginForm ref
+    const loginForm = useRef(null)
+
+    //Form submit handler
+    const handleSubmit = (e:any) => {
+        e.preventDefault()
+        const email = loginForm.current.email.value
+        const password = loginForm.current.password.value
+
+        const userInfo = { email, password }
+
+        loginUser(userInfo)
+
+        // const navigateHome = useNavigate();
+        // navigateHome('/home')
+    }
     return (
         <div className='bg-light '>
         <div className='hero_section container bg-light mb-5'>
@@ -41,7 +61,7 @@ function Login() {
                         src={forwardArrow} /></button>
                 </div>
             </section>
-            <form
+            <form onSubmit={handleSubmit} ref={loginForm}
                 className=" col-md-5 border order-first order-md-1 bg-white d-flex flex-column gap-3 p-4 rounded">
                 <span className="h3 text-center"><b>Login</b></span>
                 <p className="create_account text-center">
@@ -49,13 +69,13 @@ function Login() {
                 </p>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail"><b>Email</b> </label>
-                    <input type="email" className="form-control p-3"
+                    <input type="email" className="form-control p-3 shadow-none border-light" name="email"
                         id="exampleInputEmail" aria-describedby="emailHelp"
                         placeholder="Enter email" required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword"><b>Password</b></label>
-                    <input type="password" className="form-control p-3"
+                    <input type="password" className="form-control p-3 shadow-none border-light" name="password"
                         id="exampleInputPassword" placeholder="Password" required />
                 </div>
                 <div className="form-group d-flex gap-2 justify-content-end ">
@@ -75,9 +95,10 @@ function Login() {
                         src={googleLogo} className="pe-3" />Login Up with Google</button>
                 <div className="form-link">
                     <p className="text-center">Don't have an account?
-                        <a href="SignUp.js" className="text-black"> Sign Up
-                            <img src={loginArrow} alt="login" />
-                        </a>
+                    <Link to="/signUp" className="text-black"> Sign Up
+                                    <img src={loginArrow} alt="login" />
+                    </Link>
+                    
                     </p>
                 </div>
             </form>

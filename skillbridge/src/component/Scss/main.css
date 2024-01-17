@@ -1,1 +1,4 @@
-@import 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap';/*# sourceMappingURL=main.css.map */
+@import 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap';
+* {
+  font-family: "Be Vietnam Pro";
+}/*# sourceMappingURL=main.css.map */

@@ -1,35 +1,40 @@
-body{
-    background-color: #F1F1F3;
+@import 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap';
+* {
+  font-family: "Be Vietnam Pro";
 }
 
-.testimonial_description p,
-.comments_container  p {
-    color: #646363;
+body {
+  background-color: #F1F1F3;
+}
+
+.main_container .testimonial_description p,
+.main_container .comments_container p {
+  color: #646363;
 }
 
 .profile_container {
-    background-color: #FCFCFD;
+  background-color: #FCFCFD;
 }
-.profile > p{
-    color: black;
-    font-weight: bold;
+.profile_container .profile > p {
+  color: black;
+  font-weight: bold;
 }
-.read_more_button{
-    background-color: #f0f0f4fa;
-}
-#exampleInputName,
-#exampleInputEmail,
-#exampleInputPassword{
-    background-color: #F7F7F8;
-}
-.terms_of_use,
-.privacy_policy{
-    color:#646363
+.profile_container .read_more_button {
+  background-color: rgba(240, 240, 244, 0.9803921569);
 }
 
-.sign_up_submit_button {
-    background-color: var(--orange);
+form #exampleInputName,
+form #exampleInputEmail,
+form #exampleInputPassword {
+  background-color: #F7F7F8;
 }
-.google_sign_up_button {
-    background-color: var(--antiFlashWhite);
+form .terms_of_use,
+form .privacy_policy {
+  color: #646363;
 }
+form .sign_up_submit_button {
+  background-color: orange;
+}
+form .google_sign_up_button {
+  background-color: #F1F1F3;
+}/*# sourceMappingURL=SignUp.css.map */

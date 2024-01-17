@@ -1,13 +1,14 @@
-import "../Home/Home.css"
+import "../Home/Home.scss"
 import { Link } from 'react-router-dom'
 import {LightiningIcon, zapier, spotify, netflix, notion, adobe, amazon, zoom} from "../../assets/resource/iconResource"
 import {AbstractIcon, videoImg } from "../../assets/resource/imgResource"
 import CourseSection from '../CourseSection/CourseSection'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
-import PricingSection from '../PricingSection/PricingSection'
-import FAQSection from '../FAQSection/FAQSection'
+import PricingSection from '../CommonFunctionalities/PricingSection/PricingSection'
+import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'
 import BenefitSection from '../BenefitSection/BenefitSection'
-
+import Sample from "./Sample"
+// import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 function Home() {
@@ -34,43 +35,44 @@ function Home() {
             Courses</a>
           <a href='#pricing' className="btn view_pricing_button text-decoration-none bg-white rounded border-0 fw-medium">View
             Pricing</a>
+            
         </div>
       </section>
 
-      <section className="container card_section mt-5">
+      <section className="container card_section mt-5 mb-5">
          <div
-           className="card_container  d-flex  bg-white rounded p-3 row ">
-           <div className="img_container border col  p-md-4">
+           className="card_container  d-flex  bg-white rounded p-3">
+           <div className="img_container  p-5">
              <Link to="#">
                <img src={zapier} alt="zapier" className="card-img"/>
              </Link>
            </div>
-           <div className="img_container col p-md-4">
+           <div className="img_container p-5">
              <Link to="#">
                <img src={spotify} alt="spotify" className="card-img" />
              </Link>
            </div>
-           <div className="img_container col  p-md-4 p-3">
+           <div className="img_container p-5">
              <Link to="#">
                <img src={zoom} alt="zoom" className="card-img" />
              </Link>
            </div>
-           <div className="img_container col  p-md-4 p-3">
+           <div className="img_container p-5 ">
              <Link to="#">
                <img src={amazon} alt="amazon" className="card-img"/>
              </Link>
            </div>
-           <div className="img_container col  p-md-4 p-3">
+           <div className="img_container  p-5 ">
              <Link to="#" >
                <img src={adobe} alt="adobe" className="card-img"/>
              </Link>
            </div>
-           <div className="img_container col p-md-4 p-3">
+           <div className="img_container p-5">
              <Link to="#">
                <img src={notion} alt="notion" className="card-img" />
              </Link>
            </div>
-           <div className=" col p-md-4 p-3">
+           <div className=" p-5">
              <Link to="#">
                <img src={netflix} alt="netflix" className="card-img" />
              </Link>
@@ -83,15 +85,14 @@ function Home() {
       </section>
 
       <BenefitSection/>
-      <div id='courses'>
-      <CourseSection />
+      <div id="courses">
+        <CourseSection/>
       </div>
       <TestimonialSection/>
       <div id='pricing'>
       <PricingSection/>
       </div>
       <FAQSection/>
-      {/* <Sample/> */}
     </div>
   )
 }

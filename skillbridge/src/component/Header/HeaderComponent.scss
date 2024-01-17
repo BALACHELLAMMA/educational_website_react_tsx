@@ -1,0 +1,20 @@
+@import "../Scss/main.scss";
+
+.header {
+
+    .topBanner ,
+    .login_button,
+    .logout_button{
+        background-color: $orange;
+    }
+
+    .navbar .navbar-nav .nav-link:hover {
+        background-color:#F1F1F3;
+        // color: #fff;
+    }
+}
+
+/* .sign_up_button{
+    background-color: var(--white);
+} */
+

@@ -1,31 +1,40 @@
 import './App.css';
-import { Route,  Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HeaderComponent from './component/Header/HeaderComponent';
-// import SignUp from './component/SignUp/SignUp';
+import SignUp from './component/SignUp/SignUp';
 import HomePage from './pages/Home/Home';
-import NewFooter from './component/Footer/Footer';
-import PricingPage from './pages/Pricing/PricingPage';
-import AboutPage from './pages/About/About';
-import ContactPage from './pages/Contact/Contact';
-import CoursePage from './pages/Course/Course';
+import NewFooter from '../src/component/Footer/Footer';
 import Login from './component/SignUp/Login';
-// import ImageGallery from './component/Home/ImageWithButton';
+import { AuthProvider } from './utils/AuthContext';
+import PrivateRoutes from './utils/PrivateRoutes';
+import About from './component/About/About';
+import CoursePage from './pages/Course/Course';
+import PricingPage from './pages/Pricing/PricingPage';
+import ContactPage from './pages/Contact/Contact';
+
 
 
 
 function App() {
   return (
     <div className="App">
-       <HeaderComponent/>
-       <Routes>
-          <Route index   element={<Login/>}/>  
-          <Route path='/Home' element={<HomePage/>}/> 
-          <Route path='/Pricing' element={<PricingPage/>}/>
-          <Route path='/About' element={<AboutPage/>}/>
-          <Route path='/Course' element={<CoursePage/>}/>   
-          <Route path='/Contact' element={<ContactPage/>}/>      
-       </Routes>
-       <NewFooter/>
+      {/* <Router> */}
+      <AuthProvider>
+        <HeaderComponent />
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/signUp' element={<SignUp />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path='/home' element={<HomePage />} />
+            <Route path='/course' element={<CoursePage />} />
+            <Route path='/about' element={<About />} />
+            <Route path='pricing' element={<PricingPage />} />
+            <Route path='/contact' element={<ContactPage />} />
+          </Route>
+        </Routes>
+        <NewFooter />
+      </AuthProvider>
+      {/* </Router> */}
     </div>
   );
 }

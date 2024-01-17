@@ -1,12 +1,13 @@
 import { Courselist } from '../Data/CourseData'
+import useToggleState from '../CommonFunctionalities/Custom Hook/useToggleState';
 
+function CourseSection() :JSX.Element{
 
-function CourseSection() {
-
+    const [viewAll, setViewAll] = useToggleState(false);
 
     const RenderCourse = Courselist.map((course) => {
         return (
-            <div className="col">
+            <div className="col" key={course.id}>
                 <div className="card border-0 p-2">
                     <div className="card-body d-flex flex-column gap-2">
                         <img src={course.image}
@@ -39,11 +40,12 @@ function CourseSection() {
                         senectus in.</p>
                     <div
                         className="col d-flex justify-content-md-end justify-content-sm-start mt-sm-2">
-                        <button className="bg-white border-0 rounded p-3"><b>View All</b></button>
+                         <button className="bg-white border-0 rounded p-3" onClick={setViewAll}>{viewAll ? 'View Less':'View All'}</button>
                     </div>
                 </section>
                 <div className="row row-cols-1 row-cols-md-2 g-4">
                     {RenderCourse}
+                    {viewAll && RenderCourse}
                 </div>
             </div>
         </>

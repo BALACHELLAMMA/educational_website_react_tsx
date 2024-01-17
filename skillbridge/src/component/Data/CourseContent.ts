@@ -1,19 +1,4 @@
-import webDesignImage1 from '../../assets/img/web_design_fundamentals_1.svg';
-import webDesignImage2 from '../../assets/img/web_design_fundamentals_2.svg';
-import webDesignImage3 from '../../assets/img/web_design_fundamentals_3.svg';
-import UIUXImage1 from '../../assets/img/ui_ux_1.svg';
-import UIUXImage2 from '../../assets/img/ui_ux_2.svg';
-import UIUXImage3 from '../../assets/img/ui_ux_3.svg';
-import MobileDevelopmentImage1 from '../../assets/img/mobile_app_development_1.svg';
-import MobileDevelopmentImage2 from '../../assets/img/mobile_app_development_2.svg';
-import MobileDevelopmentImage3 from '../../assets/img/mobile_app_development_3.svg';
-import graphicDesignImage1 from '../../assets/img/graphic_design_1.svg';
-import graphicDesignImage2 from '../../assets/img/graphic_design_2.svg';
-import graphicDesignImage3 from '../../assets/img/graphic_design_3.svg';
-import frontEndDevelopmentImage1 from '../../assets/img/front_end_development_1.svg';
-import frontEndDevelopmentImage2 from '../../assets/img/front_end_development_2.svg';
-import frontEndDevelopmentImage3 from '../../assets/img/front_end_development_3.svg';
-
+import { webDesignImage1,webDesignImage2,webDesignImage3, UIUXImage1, UIUXImage2, UIUXImage3, MobileDevelopmentImage1, MobileDevelopmentImage2, MobileDevelopmentImage3, graphicDesignImage1, graphicDesignImage2, graphicDesignImage3, frontEndDevelopmentImage1, frontEndDevelopmentImage2, frontEndDevelopmentImage3 } from "../../assets/resource/imgResource";
 
 export const CourseList = [
     {
