@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import "react-toastify/dist/ReactToastify.css";
 import { databases } from "../../appwriteConfig";
 import { descriptionList } from "../Data/Description";
+import emailjs from "@emailjs/browser";
 import {
   locationIcon,
   phoneIcon,
@@ -25,6 +26,7 @@ interface FormData {
   messageInput: string;
 }
 function Contact() {
+  const form = useRef(); // for emailjs
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
@@ -57,6 +59,22 @@ function Contact() {
           message: formData.messageInput,
         }
       );
+
+      emailjs
+        .sendForm(
+          "service_8gpwtpa",
+          "template_aeguxqw",
+          form.current,
+          "lOPJL4qloEffQEiAr"
+        )
+        .then(
+          (result: any) => {
+            console.log(result.text);
+          },
+          (error: any) => {
+            console.log(error.text);
+          }
+        );
       toast.success("Submitted Sucessfully");
       firstNameRef.current.value = "";
       lastNameRef.current.value = "";
@@ -95,7 +113,7 @@ function Contact() {
       <div className="container">
         <div className="row row-cols-2 d-flex rounded bg-white p-2">
           <section className="contact col-12 col-md-8  p-4" id="form_section">
-            <Form onSubmit={handleSubmit} className="contactForm">
+            <Form onSubmit={handleSubmit} className="contactForm" ref={form}>
               <div className="row row-cols-md-2 ">
                 <Form.Group className="mb-3" controlId="firstNameInput">
                   <Form.Label className="fw-medium">First Name</Form.Label>
@@ -103,6 +121,7 @@ function Contact() {
                     type="text"
                     placeholder="Enter First Name"
                     className="formInput"
+                    name="firstname"
                     ref={firstNameRef}
                     required
                   />
@@ -114,6 +133,7 @@ function Contact() {
                     type="text"
                     placeholder="Enter Last Name"
                     className="formInput"
+                    name="lastname"
                     ref={lastNameRef}
                     required
                   />
@@ -125,6 +145,7 @@ function Contact() {
                     type="email"
                     placeholder="Enter Your Email"
                     className="formInput"
+                    name="email"
                     ref={emailRef}
                     required
                   />
@@ -136,6 +157,7 @@ function Contact() {
                     type="text"
                     placeholder="Enter Phonenumber"
                     className="formInput"
+                    name="phone"
                     ref={phoneRef}
                     required
                   />
@@ -148,6 +170,7 @@ function Contact() {
                   type="text"
                   placeholder="Enter your Subject"
                   className="formInput"
+                  name="subject"
                   ref={subjectRef}
                   required
                 />
@@ -163,6 +186,7 @@ function Contact() {
                   rows={3}
                   placeholder="Enter your Message here..."
                   className="formInput"
+                  name="message"
                   ref={messageRef}
                   required
                 />

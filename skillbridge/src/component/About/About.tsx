@@ -11,29 +11,29 @@ const About = ()=> {
         <p>{item.desc}</p>
       <div className='row row-cols-1 row-cols-md-2 g-4'>
       <div className='col'>
-        <div className='card border-0 bg-white p-3 d-flex gap-2'>
-          <img src={item.content[0][0]} alt=".." style={{width:"50px"}}/>
+        <div className='about_content_card card border-0 bg-white p-3 d-flex gap-2'>
+          <img src={item.content[0][0]} alt=".." />
           <h6>{item.content[0][1]}</h6>
           <p>{item.content[0][2]}</p>
       </div>
       </div>
       <div className='col'>
-        <div className='card border-0 bg-white p-3 d-flex gap-2'>
-          <img src={item.content[1][0]} alt=".." style={{width:"50px"}}/>
+        <div className='about_content_card card border-0 bg-white p-3 d-flex gap-2'>
+          <img src={item.content[1][0]} alt=".." />
           <h6>{item.content[1][1]}</h6>
           <p>{item.content[1][2]}</p>
       </div>
       </div>
       <div className='col'>
-        <div className='card bg-white border-0 p-3 d-flex gap-2'>
-          <img src={item.content[2][0]} alt=".." style={{width:"50px"}}/>
+        <div className='about_content_card card bg-white border-0 p-3 d-flex gap-2'>
+          <img src={item.content[2][0]} alt=".." />
           <h6>{item.content[2][1]}</h6>
           <p>{item.content[2][2]}</p>
       </div>
       </div>
       <div className='col'>
-        <div className='card bg-white border-0 p-3 d-flex gap-2'>
-          <img src={item.content[3][0]} alt=".." style={{width:"50px"}}/>
+        <div className='about_content_card card bg-white border-0 p-3 d-flex gap-2'>
+          <img src={item.content[3][0]} alt=".." />
           <h6>{item.content[3][1]}</h6>
           <p>{item.content[3][2]}</p>
       </div>
@@ -75,10 +75,10 @@ const About = ()=> {
           <div className='d-flex  flex-sm-wrap-reverse flex-md-nowrap col-12 col-md-6 row'>
           <div className='border col'>
             <img src={AbstractDesign} alt='abstract_image' 
-            id='abstractDesign' style={{width:"100%"}} />
+            className='abstractDesign' />
           </div>
             <div className='d-flex  align-items-center justify-content-center col-md-3 col-6 order-first order-md-1 border '>
-            <button className='btn bg-warning text-white ' style={{width:"100px"}}>Join Now</button>
+            <button className='join_button btn bg-warning text-white '>Join Now</button>
             </div>
             </div>
          </div>

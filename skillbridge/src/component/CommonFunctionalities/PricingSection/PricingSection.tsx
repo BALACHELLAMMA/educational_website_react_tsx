@@ -1,6 +1,7 @@
 import React from 'react'
 import './PricingSection.scss'
 import { pricingFeaturesData } from '../../Data/PricingFeaturesData';
+import { Link } from 'react-router-dom';
 
 
 function PricingSection() {
@@ -13,8 +14,8 @@ function PricingSection() {
               <div className="plan_container bg-light rounded">
                  <h3 className="plan_type p-3 rounded text-center">{feature.plan}</h3>
                  <div className="text-center p-4"> <h2>
-                       <span className="price fw-bold">${feature.price}</span>
-                       /month
+                       <span className="price fw-bold">${feature.price.yearlyPrice}</span>
+                       /{feature.title === "month" ? "month": "year"}
                     </h2></div>
                  <div
                     className="available_features_container bg-white border p-3 d-flex flex-column gap-2">
@@ -73,10 +74,10 @@ function PricingSection() {
             className="pricing_description d-flex justify-content-md-center row mb-5">
             <div
                className='monthly_yearly_button bg-white rounded d-flex gap-1  mt-sm-2 p-2'
-               style={{width: "200px"}}>
-               <button className="monthly_button text-white border-0 rounded p-3" 
-              ><b>Monthly</b></button>
-               <button className="yearly_button border-0 rounded p-3"><b>Yearly</b></button>
+               style={{width: "170px"}}>
+               <Link to='' className="monthly_Link" 
+              ><b>Monthly</b></Link>
+               <Link to='' className="yearly_Link"><b>Yearly</b></Link>
             </div>
          </section>
          <div className='row row-cols-1 row-cols-md-2 g-4 bg-white rounded p-4'>

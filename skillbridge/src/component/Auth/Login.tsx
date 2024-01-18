@@ -9,7 +9,10 @@ import {
   loginArrow,
 } from "../../assets/resource/imgResource";
 import { Link } from "react-router-dom";
-import { hide_password_icon,open_password_icon } from "../../assets/resource/iconResource";
+import {
+  hide_password_icon,
+  open_password_icon,
+} from "../../assets/resource/iconResource";
 
 function Login() {
   const { user, loginUser } = useAuth();
@@ -32,8 +35,8 @@ function Login() {
     <div className="bg-light ">
       <div className="hero_section container bg-light mb-5">
         <div className="main_container modal-body row d-flex justify-content-between">
-          <section className="col-md-6 d-flex flex-column">
-            <div className="testimonial_description p-3">
+          <section className="col-md-6 d-flex flex-column ">
+            <div className="testimonial_description p-3  ">
               <span className="h1">Students Testimonials</span>
               <p>
                 Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam
@@ -41,7 +44,7 @@ function Login() {
                 Ac cum eget habitasse in velit fringilla feugiat senectus in.
               </p>
             </div>
-            <div className="comments_container bg-white">
+            <div className="comments_container bg-white rounded">
               <p className="p-4">
                 The web design course provided a solid foundation for me. The
                 instructors were knowledgeable and supportive, and the
@@ -50,18 +53,18 @@ function Login() {
               </p>
               <div
                 className="profile_container border-top p-4 
-                      d-flex justify-content-between "
+                      d-flex justify-content-between flex-wrap"
               >
                 <div className="profile  d-flex gap-3 align-items-center">
                   <img src={SarahImg} alt="avatar" />
                   <p className="mt-3">Sarah L</p>
                 </div>
-                <button className="read_more_button rounded  border-0 fw-medium p-3">
+                <button className="read_more_button rounded  border-0 fw-medium p-3 mt-2">
                   Read Full Story
                 </button>
               </div>
             </div>
-            <div className="button_container align-self-end mt-3">
+            <div className="button_container align-self-md-end align-self-center mt-3">
               <button className="bg-white rounded border-0 p-3 ">
                 <img src={backwardArrow} />
               </button>
@@ -73,7 +76,7 @@ function Login() {
           <form
             onSubmit={handleSubmit}
             ref={loginForm}
-            className=" col-md-5 border order-first order-md-1 bg-white d-flex flex-column gap-3 p-4 rounded"
+            className=" col-md-5  order-first order-md-1 bg-white d-flex flex-column gap-3 p-4 rounded"
           >
             <span className="h3 text-center">
               <b>Login</b>
@@ -112,7 +115,10 @@ function Login() {
                   className="border-0 bg-transparent"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  <img src={showPassword ? hide_password_icon : open_password_icon} className="show_hide_icon" />
+                  <img
+                    src={showPassword ? hide_password_icon : open_password_icon}
+                    className="show_hide_icon"
+                  />
                 </button>
               </div>
             </div>
@@ -146,15 +152,14 @@ function Login() {
               <img src={googleLogo} className="pe-3" />
               Login Up with Google
             </button>
-            <div className="form-link">
-              <p className="text-center">
-                Don't have an account?
+            <div className="form-link d-flex align-content-center justify-content-center flex-wrap">
+              <p>Don't have an account?
+                </p>
                 <Link to="/signUp" className="text-black">
                   {" "}
                   Sign Up
-                  <img src={loginArrow} alt="login" />
+                <img src={loginArrow} alt="login" />
                 </Link>
-              </p>
             </div>
           </form>
         </div>

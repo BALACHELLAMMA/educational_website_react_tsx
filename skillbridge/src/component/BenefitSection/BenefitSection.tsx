@@ -1,11 +1,11 @@
 import React from 'react'
 import { benefits } from '../Data/BenefitData'
 import { benefitIcon } from '../../assets/resource/iconResource';
-import useToggleState from '../CommonFunctionalities/Custom Hook/useToggleState';
+import useBooleanState from '../CommonFunctionalities/Custom Hook/useToggleState';
 
 function BenefitList() {
     
-    const [viewAll, setViewAll] = useToggleState(false);
+    const [viewAll, setViewAll] = useBooleanState(false);
 
     const BenefitSection=() => {
         return(

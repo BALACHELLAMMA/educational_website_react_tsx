@@ -2,13 +2,27 @@
 
 .monthly_yearly_button{
     
-    .monthly_button{
-        background-color: $orange;
+    .monthly_Link,
+    .yearly_Link{
+            display: block;
+            text-decoration: none;
+            background-color: transparent;
+            color: #000;
+            padding: 10px;
+            // border:1px solid black;
+            border-radius: 5px;
     }
-    
-    .yearly_button{
-        background-color: $white;
+
+    .monthly_Link:active,
+    .monthly_Link:hover,
+    .monthly_Link:focus,
+    .yearly_Link:active,
+    .yearly_Link:hover,
+    .yearly_Link:focus{
+        background-color: orange;
+        color: #ffff;
     }
+      
 
 }
 

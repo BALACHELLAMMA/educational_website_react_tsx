@@ -9,22 +9,6 @@ import '../../component/Header/HeaderComponent.scss'
 
 function HeaderComponent() {
     const { user, logoutUser } = useAuth();
-    // const [activeButton, setActiveButton] = useState<number>(1);
-
-    // const handleButtonClick = (buttonNumber: number) => {
-    //     setActiveButton(buttonNumber);
-    // };
-
-    // const buttonClass = (buttonNumber: number) => {
-    //     return `${activeButton === buttonNumber ? 'btn-orange' : 'btn-transparent'}`;
-    // };
-
-    const { pathname } = useLocation();
-
-    const linkClassName = (path:string) => {
-      return `auth-link ${pathname === path ? 'active-link' : 'inactive-link'}`;
-    };
-
 
     return (
         <div className='header bg-light'>
@@ -77,9 +61,9 @@ function HeaderComponent() {
                             :
                             (
                                 <div className="d-flex gap-2">
-                                    <NavLink to='/signUp' className="signupLink">
+                                    <Link to='/signUp' className="signupLink">
                                         Sign Up
-                                    </NavLink>
+                                    </Link>
                                     <Link to='/' className="loginLink">
                                         Login
                                     </Link>
