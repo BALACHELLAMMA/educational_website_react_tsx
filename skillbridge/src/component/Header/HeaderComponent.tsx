@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from '../../utils/AuthContext';
 import logo from '../../assets/img/Logo.svg'
 import hamburger from '../../assets/img/hamburger.svg'
@@ -9,6 +9,7 @@ import '../../component/Header/HeaderComponent.scss'
 
 function HeaderComponent() {
     const { user, logoutUser } = useAuth();
+    const location = useLocation();
 
     return (
         <div className='header bg-light'>
@@ -37,7 +38,7 @@ function HeaderComponent() {
                             <ul
                                 className="navbar-nav justify-content-start flex-grow-3 pe-3">
                                 <li className="nav-item">
-                                    <Link to="/home" className="nav-link">Home</Link>
+                                    <Link to="/home" className={`nav-link ${location.pathname === '/home' ? 'active' : ''} `}>Home</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to="/course" className="nav-link">Courses</Link>
@@ -61,10 +62,10 @@ function HeaderComponent() {
                             :
                             (
                                 <div className="d-flex gap-2">
-                                    <Link to='/signUp' className="signupLink">
+                                    <Link to='/signUp' className={`signupLink ${(location.pathname === '/signUp') ? 'active' : ''}`}>
                                         Sign Up
                                     </Link>
-                                    <Link to='/' className="loginLink">
+                                    <Link to='/' className={`loginLink ${(location.pathname === '/') ? 'active' : ''}`}>
                                         Login
                                     </Link>
                                 </div>

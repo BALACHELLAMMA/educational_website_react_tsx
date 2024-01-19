@@ -10,6 +10,7 @@ import forwardArrow from "../../assets/img/forward_arrow.svg";
 import loginArrow from "../../assets/img/login_arrow.svg";
 import googleLogo from "../../assets/img/google_logo.svg";
 import useBooleanState from "../CommonFunctionalities/Custom Hook/useToggleState";
+// import { account } from "../../appwriteConfig";
 
 function SignUp() {
   const { registerUser } = useAuth();
@@ -27,6 +28,12 @@ function SignUp() {
 
     registerUser(userInfo);
   };
+
+  // const googleSignUp = (e:any)=>{
+  //   e.preventDefault();
+  //   account.createOAuth2Session('google',location.href);
+  // }
+
   return (
     <div className="bg-light ">
       <div className="hero_section container bg-light mb-5">
@@ -152,6 +159,7 @@ function SignUp() {
             <button
               type="submit"
               className="google_sign_up_button border-0 rounded w-100 mt-2 p-3"
+              // onClick={(e)=>googleSignUp(e)}
             >
               <img src={googleLogo} className="pe-3" />
               Sign Up with Google

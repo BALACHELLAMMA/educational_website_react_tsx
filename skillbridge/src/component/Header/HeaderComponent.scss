@@ -6,12 +6,9 @@
     .logout_button{
         background-color: $orange;
     }
-    .signupLink:active,
-    .signupLink:hover,
-    .signupLink:focus,
-    .loginLink:active,
-    .loginLink:hover,
-    .loginLink:focus{
+    .signupLink.active,
+    .loginLink.active
+    {
         background-color: orange;
         color: #ffff;
     }
@@ -26,7 +23,10 @@
         border-radius: 5px;
     }
 
-    .navbar .navbar-nav .nav-link:hover {
+    .navbar .navbar-nav .nav-link:hover,
+    .navbar .navbar-nav .nav-link.active
+    {
+    
         background-color:#F1F1F3;
         // color: #fff;
     }

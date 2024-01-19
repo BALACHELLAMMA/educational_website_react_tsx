@@ -67,6 +67,7 @@ function Contact() {
           form.current,
           "lOPJL4qloEffQEiAr"
         )
+
         .then(
           (result: any) => {
             console.log(result.text);
@@ -145,7 +146,7 @@ function Contact() {
                     type="email"
                     placeholder="Enter Your Email"
                     className="formInput"
-                    name="email"
+                    name="userEmail"
                     ref={emailRef}
                     required
                   />
