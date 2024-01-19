@@ -98,6 +98,7 @@ function Home() {
       <div id="faq">
         <FAQSection />
       </div>
+      
     </div>
   )
 }

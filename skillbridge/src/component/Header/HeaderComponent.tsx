@@ -52,6 +52,9 @@ function HeaderComponent() {
                                 <li className="nav-item">
                                     <Link to="/contact" className="nav-link">Contact Us</Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link to="/slider" className="nav-link">Slider</Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
