@@ -10,6 +10,7 @@ import forwardArrow from "../../assets/img/forward_arrow.svg";
 import loginArrow from "../../assets/img/login_arrow.svg";
 import googleLogo from "../../assets/img/google_logo.svg";
 import useBooleanState from "../CommonFunctionalities/Custom Hook/useToggleState";
+import TestimonialSliderComponent from "./TestimonialSliderComponent";
 // import { account } from "../../appwriteConfig";
 
 function SignUp() {
@@ -47,34 +48,7 @@ function SignUp() {
                 Ac cum eget habitasse in velit fringilla feugiat senectus in.
               </p>
             </div>
-            <div className="comments_container bg-white rounded">
-              <p className="p-4">
-                The web design course provided a solid foundation for me. The
-                instructors were knowledgeable and supportive, and the
-                interactive learning environment was engaging. I highly
-                recommend it!
-              </p>
-              <div
-                className="profile_container border-top p-4 
-                      d-flex justify-content-between "
-              >
-                <div className="profile  d-flex gap-3 align-items-center">
-                  <img src={sarahImg} alt="avatar" />
-                  <p className="mt-3">Sarah L</p>
-                </div>
-                <button className="read_more_button rounded  border-0 fw-medium p-3">
-                  Read Full Story
-                </button>
-              </div>
-            </div>
-            <div className="button_container align-self-end mt-3">
-              <button className="bg-white rounded border-0 p-3 ">
-                <img src={backwardArrow} />
-              </button>
-              <button className="bg-white rounded border-0 p-3 ms-2">
-                <img src={forwardArrow} />
-              </button>
-            </div>
+            <TestimonialSliderComponent/>
           </section>
           <form
             ref={registerForm}

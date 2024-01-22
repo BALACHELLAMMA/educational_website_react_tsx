@@ -1,145 +1,89 @@
-import '../Course/Course.scss'
-import { descriptionList } from '../Data/Description';
-import { individualCourseData } from '../Data/IndividualCourseData';
-import {uiux_design } from '../../assets/resource/imgResource';
-import { clock_icon } from '../../assets/resource/iconResource';
+import { descriptionList } from "../Data/Description";
+import { uiuxDesignCourseData } from "../Data/UIUXDesignCourseData";
+import { uiux_design } from "../../assets/resource/imgResource";
+import { clock_icon } from "../../assets/resource/iconResource";
+import "./Course.scss";
 
+import { useLocation} from 'react-router-dom';
 
 function CourseOpenPage() {
-    return (
-        <div>
-            {descriptionList.filter(description => {
-                return (description.title === 'coursepage')
-            }).map((description) => {
-                return (
-                    <section className="description_section container mt-5 mb-5 border-bottom">
-                        <div className="description_container row ">
-                            <h1 className="col-md-6 col-12">{description.heading}</h1>
-                            <p className="col-md-6 col-12">{description.content}</p>
-                        </div>
-                    </section>
-                );
-            })
-            }
-            <div className='courseImageContainer container'>
-                <img src={uiux_design} className='courseImage' />
+  // const { title } = useParams();
+  const location = useLocation();
+  const title = location.state;
+  return (
+    <div>
+      {descriptionList
+        .filter((description) => {
+          return (description.title === "coursepage");
+        })
+        .map((description) => (
+          <section
+            className="description_section container mt-5 mb-5 border-bottom"
+            key={description.heading}
+          >
+            <div className="description_container row">
+              <h1 className="col-md-6 col-12">{title}</h1>
+              <p className="col-md-6 col-12">{description.content}</p>
             </div>
+          </section>
+        ))}
+      <div className="courseImageContainer container">
+        <img src={uiux_design} className="courseImage img-fluid" alt="Course" />
+      </div>
 
-
-            <div className='d-flex flex-column gap-2 container mt-5 mb-5'>
-                <div className="row row-cols-1 row-cols-md-2 g-4">
-                    {individualCourseData.map((course) => {
-                        return (
-                            <div className="col">
-                                <div className="card border-0 p-2">
-                                    <div className="card-body d-flex flex-column gap-2">
-                                        <div className='d-flex justify-content-end'><h1>{course.id}</h1></div>
-                                        <h4>{course.heading}</h4>
-                                        <div className='content_container d-flex align-items-start justify-content-between border p-2 rounded'>
-                                            <div>
-                                                <h5>{course.content[0][0]}</h5>
-                                                <p>{course.content[0][1]}</p>
-                                            </div>
-                                            <div className='duration_container btn bg-light border rounded d-flex align-items-start w-25 p-1'>
-                                                <img src={clock_icon} className='clockIcon' />
-                                                <p className='duration_text'>{course.content[0][2]}</p>
-                                            </div>
-                                        </div>
-
-                                        <div className='content_container d-flex align-items-start justify-content-between border p-2 rounded'>
-                                            <div>
-                                                <h5>{course.content[1][0]}</h5>
-                                                <p>{course.content[1][1]}</p>
-                                            </div>
-                                            <div className='duration_container btn bg-light border rounded d-flex align-items-start w-25 p-1'>
-                                                <img src={clock_icon} className='clockIcon' />
-                                                <p className='duration_text'>{course.content[0][2]}</p></div>
-                                        </div>
-
-                                        <div className='content_container row d-flex align-items-start justify-content-between border p-2 rounded'>
-                                            <div className='col col-7 border'>
-                                                <h6>{course.content[2][0]}</h6>
-                                                <p>{course.content[2][1]}</p>
-                                            </div>
-                                            <div className='col col-4 border duration_container btn bg-light border rounded d-flex align-items-start p-1 gap-2'
-                                                style={{ width: "100px" }}>
-                                                <img src={clock_icon} className='clockIcon mt-2' />
-                                                <p className='duration_text mt-2 '>{course.content[0][2]}</p></div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    }
-
-                    )}
-                </div>
-            </div>
-
-            <div className='container'>
-                <section className='content mt-5 mb-5'>
-                    <div className='row row-cols-1 row-cols-md-2 g-4'>
-                        <div className='col'>
-                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
-                                <h1 className='fw-bold align-self-end'>01</h1>
-                                <h5>Introduction to UI/UX Design</h5>
-                                <div className='border rounded d-flex justify-content-between p-2'>
-                                    Understanding UI/UX design principles                                      
-                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='col'>
-                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
-                                <h1 className='fw-bold align-self-end'>02</h1>
-                                <h5>Introduction to UI/UX Design</h5>
-                                <div className='border rounded d-flex justify-content-between p-2'>
-                                    Understanding UI/UX design principles                                      
-                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='col'>
-                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
-                                <h1 className='fw-bold align-self-end'>03</h1>
-                                <h5>Introduction to UI/UX Design</h5>
-                                <div className='border rounded d-flex justify-content-between p-2'>
-                                    Understanding UI/UX design principles                                      
-                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='col'>
-                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
-                                <h1 className='fw-bold align-self-end'>04</h1>
-                                <h5>Introduction to UI/UX Design</h5>
-                                <div className='border rounded d-flex justify-content-between p-2'>
-                                    Understanding UI/UX design principles                                      
-                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <div className='col'>
-                            <div className='card border-0 bg-white p-3 d-flex gap-2'>
-                                <h1 className='fw-bold align-self-end'>05</h1>
-                                <h5>Introduction to UI/UX Design</h5>
-                                <div className='border rounded d-flex gap-5 p-2'>
-                                    <div className=''>
-                                        <p>Understanding UI/UX design principles</p>
-                                        <p className='text-secondary'>Lesson 01</p>
-                                    </div>
-                                    <div>
-                                        <p className='border bg-light rounded p-1'><img src={clock_icon} alt='duration'/>45 minutes</p>
-                                    </div>                                
-                                </div>
-                            </div>
-                        </div> 
+      <div className="container mt-5 mb-5">
+        <div className="row row-cols-1 row-cols-md-2 g-3">
+          {uiuxDesignCourseData.map((course) => {
+            return (
+              <div className="col ">
+                <div className="card border-0 bg-white p-3 d-flex gap-2">
+                  <h1 className="fw-bold align-self-end">{course.id}</h1>
+                  <h5>{course.heading}</h5>
+                  <div className="content_container border d-flex flex-wrap flex-md-row flex-column justify-content-md-between p-3 rounded">
+                    <div className="topic_container">
+                      <p className="fw-medium">
+                        {course.content[0][0]}
+                      </p>
+                      <p className="text-secondary">{course.content[0][1]}</p>
                     </div>
-                </section>
-            </div>
+                    <div className="duration_container border bg-light rounded d-flex align-items-start gap-2 p-2">
+                      <img src={clock_icon} alt="duration" />
+                      <p>{course.content[0][2]}</p>
+                    </div>
+                  </div>
+                  <div className="content_container border d-flex flex-wrap flex-md-row flex-column justify-content-md-between p-3 rounded">
+                    <div className="topic_container">
+                      <p className="fw-medium">
+                        {course.content[1][0]}
+                      </p>
+                      <p className="text-secondary">{course.content[1][1]}</p>
+                    </div>
+                    <div className="duration_container border bg-light rounded d-flex align-items-start gap-2 p-2">
+                      <img src={clock_icon} alt="duration" />
+                      <p>{course.content[1][2]}</p>
+                    </div>
+                  </div>
+                  <div className="content_container border d-flex flex-wrap flex-md-row flex-column justify-content-md-between p-3 rounded">
+                    <div className="topic_container">
+                      <p className="fw-medium">
+                        {course.content[2][0]}
+                      </p>
+                      <p className="text-secondary">{course.content[2][1]}</p>
+                    </div>
+                    <div className="duration_container border bg-light rounded d-flex align-items-start gap-2 p-2">
+                      <img src={clock_icon} alt="duration" />
+                      <p>{course.content[2][2]}</p>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            );
+          })}
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default CourseOpenPage;

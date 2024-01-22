@@ -1,12 +1,17 @@
-// import React from 'react';
 import { courseList } from "../Data/CourseContent";
 import { descriptionList } from "../Data/Description";
+import { useNavigate } from 'react-router-dom';
 
-interface CourseProps {
-  viewCourse: () => void;
-}
 
-const Course: React.FC<CourseProps> = (props) => {
+const Course = () => {
+
+  const navigate = useNavigate();
+
+  const handleOpenCourse = (title:string) => {
+    // navigate(`/courseOpenPage/${title}`);
+    navigate('/course/courseOpenPage',{state: title})
+  };
+
   const renderCourseList = courseList.map((course) => {
     return (
       <section
@@ -23,7 +28,8 @@ const Course: React.FC<CourseProps> = (props) => {
           <div className="col d-flex justify-content-md-end justify-content-sm-start mt-sm-2">
             <button
               className="bg-light border-0 rounded p-3"
-              onClick={props.viewCourse}
+              // onClick={props.viewCourse}
+              onClick={()=>handleOpenCourse(course.title)}
             >
               <b>View Course</b>
             </button>

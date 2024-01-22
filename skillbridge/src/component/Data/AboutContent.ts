@@ -10,7 +10,7 @@ interface aboutContentList{
 
 export const aboutContentList = [
     {
-        id:1,
+        id:'achievements',
         title:"Achievements",
         desc:"Our commitment to excellence has led us to achieve significant milestones along our journey. Here are some of our notable achievements",
         content : [
@@ -29,7 +29,7 @@ export const aboutContentList = [
         ]
     },
     {
-        id:2,
+        id:'ourgoals',
         title:"Our Goals",
         desc:"At SkillBridge, our goal is to empower individuals from all backgrounds to thrive in the world of design and development. We believe that education should be accessible and transformative, enabling learners to pursue their passions and make a meaningful impact.Through our carefully crafted courses, we aim to",
         content : [

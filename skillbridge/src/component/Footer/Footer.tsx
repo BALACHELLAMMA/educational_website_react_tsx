@@ -42,12 +42,12 @@ function Footer() {
                 >
                   Home
                 </Link>
-                <Link
-                  to="/home#benefits"
+                <a
+                  href="/home#benefits"
                   className="text-decoration-none text-secondary"
                 >
                   Benefits
-                </Link>
+                </a>
                 <a
                   href="/home#courses"
                   className="text-decoration-none text-secondary"
@@ -68,16 +68,30 @@ function Footer() {
                 </a>
               </div>
               <div className="About col-6 d-flex flex-column flex-nowrap">
-                <p className="fw-bold">About Us</p>
-                <Link to="" className="text-decoration-none text-secondary">
+                <Link
+                  to="/about"
+                  className="fw-bold text-black text-decoration-none"
+                >
+                  About
+                </Link>
+                <a
+                  href="/about#ourgoals"
+                  className="text-decoration-none text-secondary"
+                >
                   Our Goals
-                </Link>
-                <Link to="" className="text-decoration-none text-secondary">
+                </a>
+                <a
+                  href="/about#achievements"
+                  className="text-decoration-none text-secondary"
+                >
                   Achievements
-                </Link>
-                <Link to="" className="text-decoration-none text-secondary">
+                </a>
+                <a
+                  href="/about#company"
+                  className="text-decoration-none text-secondary"
+                >
                   Company
-                </Link>
+                </a>
               </div>
             </div>
             <div className="SocialMediaSection col-12 col-md-4">

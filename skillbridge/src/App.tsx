@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from "react-router-dom";
+import { Route,  Routes } from "react-router-dom";
 import HeaderComponent from './component/Header/HeaderComponent';
 import SignUp from './component/Auth/SignUp';
 import HomePage from './pages/Home/Home';
@@ -8,9 +8,12 @@ import Login from './component/Auth/Login';
 import { AuthProvider } from './utils/AuthContext';
 import PrivateRoutes from './utils/PrivateRoutes';
 import About from './component/About/About';
-import CoursePage from './pages/Course/Course';
 import PricingPage from './pages/Pricing/PricingPage';
 import ContactPage from './pages/Contact/Contact';
+
+import CourseOpenPage from './component/Course/CourseOpenPage';
+import Course from './component/Course/Course';
+
 
 
 
@@ -27,10 +30,11 @@ function App() {
           <Route path='/signUp' element={<SignUp />} />
           <Route element={<PrivateRoutes />}>
             <Route path='/home' element={<HomePage />} />
-            <Route path='/course' element={<CoursePage />} />
             <Route path='/about' element={<About />} />
             <Route path='pricing' element={<PricingPage />} />
             <Route path='/contact' element={<ContactPage />} />
+            <Route path='/course' element={<Course/>}/>
+            <Route path='/course/courseOpenPage' element={<CourseOpenPage/>}/>
           </Route>
         </Routes>
         <NewFooter />

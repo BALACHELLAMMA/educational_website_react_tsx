@@ -6,7 +6,7 @@ import {AbstractDesign} from '../../assets/resource/imgResource'
 const About = ()=> {
   const renderAbout = aboutContentList.map((item) => {
     return (
-      <section className='content mt-5 mb-5'>
+      <section className='content mt-5 mb-5 ' id={item.id}>
         <h2>{item.title}</h2>
         <p>{item.desc}</p>
       <div className='row row-cols-1 row-cols-md-2 g-4'>
@@ -64,7 +64,7 @@ const About = ()=> {
         </div>
       </section>
 
-      <section className='container mt-5 bg-light'>
+      <section className='container mt-5 bg-light' id='company'>
          <div className='bg-white row d-flex  rounded'>
 
           <div className='p-3 col-12 col-md-6'>

@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import "react-toastify/dist/ReactToastify.css";
 import { databases } from "../../appwriteConfig";
 import { descriptionList } from "../Data/Description";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 import {
   locationIcon,
   phoneIcon,
@@ -25,8 +25,8 @@ interface FormData {
   subjectInput: string;
   messageInput: string;
 }
+
 function Contact() {
-  const form = useRef(); // for emailjs
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
@@ -59,23 +59,26 @@ function Contact() {
           message: formData.messageInput,
         }
       );
+      const serviceId = "service_8gpwtpa";
+      const templateId = "template_ydb45th";
+      const publicKey = "lOPJL4qloEffQEiAr";
 
-      emailjs
-        .sendForm(
-          "service_8gpwtpa",
-          "template_aeguxqw",
-          form.current,
-          "lOPJL4qloEffQEiAr"
-        )
-
-        .then(
-          (result: any) => {
-            console.log(result.text);
-          },
-          (error: any) => {
-            console.log(error.text);
-          }
-        );
+      const data = {
+        service_id: serviceId,
+        template_id: templateId,
+        user_id: publicKey,
+        template_params: {
+          from_name: formData.firstnameInput + " " + formData.lastnameInput,
+          from_email: formData.emailInput,
+          to_name: "skillbridge",
+          message: formData.messageInput,
+          subject: formData.subjectInput,
+        },
+      };
+      const mailSentResponse = await axios.post(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        data
+      );
       toast.success("Submitted Sucessfully");
       firstNameRef.current.value = "";
       lastNameRef.current.value = "";
@@ -84,13 +87,19 @@ function Contact() {
       subjectRef.current.value = "";
       messageRef.current.value = "";
 
-      console.log("Document created:", promise);
+      console.log(
+        "Document created:",
+        promise,
+        "\n Email Response : ",
+        mailSentResponse
+      );
     } catch (error) {
       console.error("Error creating document:", error);
     }
   };
   return (
     <>
+
       <div>
         {descriptionList
           .filter((description) => {
@@ -114,7 +123,7 @@ function Contact() {
       <div className="container">
         <div className="row row-cols-2 d-flex rounded bg-white p-2">
           <section className="contact col-12 col-md-8  p-4" id="form_section">
-            <Form onSubmit={handleSubmit} className="contactForm" ref={form}>
+            <Form onSubmit={handleSubmit} className="contactForm">
               <div className="row row-cols-md-2 ">
                 <Form.Group className="mb-3" controlId="firstNameInput">
                   <Form.Label className="fw-medium">First Name</Form.Label>

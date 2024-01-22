@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PricingSection.scss";
 import { pricingFeaturesData } from "../../Data/PricingFeaturesData";
-import { Link, useLocation } from "react-router-dom";
-import { descriptionList } from "../../Data/Description";
+import { Link} from "react-router-dom";
 
 function PricingSection() {
-  const location = useLocation();
+  const [monthlyYearly, setMonthlyYearly] = useState("monthly");
 
   const renderPricingFeatures = pricingFeaturesData.map((feature) => {
     return (
@@ -20,9 +19,9 @@ function PricingSection() {
                 {" "}
                 <h2>
                   <span className="price fw-bold">
-                    ${feature.price.yearlyPrice}
+                    ${feature.price}
                   </span>
-                  /{feature.title === "month" ? "month" : "year"}
+                  /{monthlyYearly === "monthly" ? "month" : "year"}
                 </h2>
               </div>
               <div className="available_features_container bg-white border p-3 d-flex flex-column gap-2">
@@ -77,12 +76,12 @@ function PricingSection() {
             className="monthly_yearly_button bg-white rounded d-flex gap-1  mt-sm-2 p-2"
             style={{ width: "170px" }}
           >
-            <Link to="" className={`monthly_Link`}>
+            <button  className={`monthly_Link`} onClick={()=>setMonthlyYearly('monthly')}>
               <b>Monthly</b>
-            </Link>
-            <Link to="" className="yearly_Link">
+            </button>
+            <button className="yearly_Link" onClick={()=>setMonthlyYearly('yearly')}>
               <b>Yearly</b>
-            </Link>
+            </button>
           </div>
         </section>
         <div className="row row-cols-1 row-cols-md-2 g-4 bg-white rounded p-4">
