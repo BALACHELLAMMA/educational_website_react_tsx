@@ -1,6 +1,6 @@
 export const uiuxDesignCourseData = [
     {
-        id:"01",
+        id:1,
         heading:'Introduction to UI/Ux Design ',
         content:[
             ['Understanding UI/UX Design Principles','Lesson 01','45 Minutes'],
@@ -9,7 +9,7 @@ export const uiuxDesignCourseData = [
         ],
     },
     {
-        id:"02",
+        id:2,
         heading:'User Research and Analysis',
         content:[
             ['Conducting User Research and Interviews','Lesson 01','1 Hour'],
@@ -18,7 +18,7 @@ export const uiuxDesignCourseData = [
         ]
     },
     {
-        id:"03",
+        id:3,
         heading:'Wireframing and Prototyping',
         content:[
             ['Introduction to Wireframing Tools and Techniques','Lesson 01','1 Hour'],
@@ -27,7 +27,7 @@ export const uiuxDesignCourseData = [
         ]
     },
     {
-        id:"04",
+        id:4,
         heading:'Visual Design and Branding',
         content:[
             ['Color Theory and Typography in UI Design','Lesson 01','1 Hour'],
@@ -36,7 +36,7 @@ export const uiuxDesignCourseData = [
         ]
     },
     {
-        id:"05",
+        id:5,
         heading:'Visual Design and Branding',
         content:[
             ['Color Theory and Typography in UI Design','Lesson 01','1 Hour'],

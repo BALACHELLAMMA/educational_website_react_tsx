@@ -4,9 +4,9 @@ import { LightiningIcon, zapier, spotify, netflix, notion, adobe, amazon, zoom }
 import { AbstractIcon, videoImg } from "../../assets/resource/imgResource"
 import CourseSection from '../CourseSection/CourseSection'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
-import PricingSection from '../CommonFunctionalities/PricingSection/PricingSection'
 import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'
 import BenefitList from "../BenefitSection/BenefitSection"
+import PricingSection from "../Pricing/PricingSection"
 
 
 
@@ -93,7 +93,7 @@ function Home() {
         <TestimonialSection />
       </div>
       <div id='pricing'>
-        <PricingSection />
+        <PricingSection/>
       </div>
       <div id="faq">
         <FAQSection />

@@ -1,22 +1,38 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../utils/AuthContext";
-import { hide_password_icon,open_password_icon } from "../../assets/resource/iconResource";
+import {
+  hide_password_icon,
+  open_password_icon,
+} from "../../assets/resource/iconResource";
 import "./SignUp.scss";
 
-import sarahImg from "../../assets/img/Sarah L.svg";
-import backwardArrow from "../../assets/img/backward_arrow.svg";
-import forwardArrow from "../../assets/img/forward_arrow.svg";
 import loginArrow from "../../assets/img/login_arrow.svg";
 import googleLogo from "../../assets/img/google_logo.svg";
 import useBooleanState from "../CommonFunctionalities/Custom Hook/useToggleState";
 import TestimonialSliderComponent from "./TestimonialSliderComponent";
+import { account } from "../../appwriteConfig";
 // import { account } from "../../appwriteConfig";
 
 function SignUp() {
   const { registerUser } = useAuth();
   const registerForm = useRef(null);
   const [showPassword, setShowPassword] = useBooleanState(false);
+
+  function handleCallbackResponse(response: any) {
+    console.log("Encoded JWT ID token: " + response.credentials);
+  }
+
+  // useEffect(()=>{
+  //    google.accounts.id.initialize({
+  //     client_id: "22141762423-5s1hsfcr5to3rpmesjq1hjlve3hcaohp.apps.googleusercontent.com",
+  //     callback : handleCallbackResponse
+  // });
+  // google.accounts.id.renderButton(
+  //   document.getElementById("signInDiv"),
+  //   {theme:"outline",size:"large"}
+  // );
+  // },[]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,10 +46,10 @@ function SignUp() {
     registerUser(userInfo);
   };
 
-  // const googleSignUp = (e:any)=>{
-  //   e.preventDefault();
-  //   account.createOAuth2Session('google',location.href);
-  // }
+  const googleSignUp = (e: any) => {
+    e.preventDefault();
+    account.createOAuth2Session("google", location.href);
+  };
 
   return (
     <div className="bg-light ">
@@ -48,7 +64,7 @@ function SignUp() {
                 Ac cum eget habitasse in velit fringilla feugiat senectus in.
               </p>
             </div>
-            <TestimonialSliderComponent/>
+            <TestimonialSliderComponent />
           </section>
           <form
             ref={registerForm}
@@ -90,21 +106,24 @@ function SignUp() {
               />
             </div>
             <div className="password_container d-flex align-items-center border-light rounded">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className="form-control p-3 shadow-none border-0 "
-                  name="password"
-                  id="exampleInputPassword"
-                  placeholder="Password"
-                  required
+              <input
+                type={showPassword ? "text" : "password"}
+                className="form-control p-3 shadow-none border-0 "
+                name="password"
+                id="exampleInputPassword"
+                placeholder="Password"
+                required
+              />
+              <button
+                className="border-0 bg-transparent"
+                onClick={setShowPassword}
+              >
+                <img
+                  src={showPassword ? hide_password_icon : open_password_icon}
+                  className="show_hide_icon"
                 />
-                <button
-                  className="border-0 bg-transparent"
-                  onClick={setShowPassword}
-                >
-                  <img src={showPassword ? hide_password_icon : open_password_icon} className="show_hide_icon" />
-                </button>
-              </div>
+              </button>
+            </div>
             <div className="form-group d-flex gap-2">
               <input type="checkbox" />
               <label>
@@ -133,19 +152,21 @@ function SignUp() {
             <button
               type="submit"
               className="google_sign_up_button border-0 rounded w-100 mt-2 p-3"
-              // onClick={(e)=>googleSignUp(e)}
+              onClick={(e) => googleSignUp(e)}
             >
               <img src={googleLogo} className="pe-3" />
               Sign Up with Google
             </button>
+            {/* <div className='signInDiv'>
+
+</div> */}
             <div className="form-link d-flex align-content-center justify-content-center flex-wrap">
-              <p>Don't have an account?
-                </p>
-                <Link to="/" className="text-black">
-                  {" "}
-                  Login
+              <p>Don't have an account?</p>
+              <Link to="/" className="text-black">
+                {" "}
+                Login
                 <img src={loginArrow} alt="login" />
-                </Link>
+              </Link>
             </div>
           </form>
         </div>

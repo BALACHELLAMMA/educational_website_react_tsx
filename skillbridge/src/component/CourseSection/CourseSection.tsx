@@ -1,9 +1,14 @@
 import { courselist } from '../Data/CourseData'
 import useToggleState from '../CommonFunctionalities/Custom Hook/useToggleState';
+import { Link, useNavigate } from 'react-router-dom';
 
 function CourseSection() :JSX.Element{
 
     const [viewAll, setViewAll] = useToggleState(false);
+    const navigate = useNavigate();
+    const handleGetItNow = (courseId: number) => {
+        navigate('/course', { state: { courseId } });
+      };
 
     const renderCourse = courselist.map((course) => {
         return (
@@ -22,7 +27,8 @@ function CourseSection() :JSX.Element{
                         </div>
                         <h5 className="card-title">{course.title}</h5>
                         <p className="card-text">{course.desc}</p>
-                        <button className="get_it_now btn btn-light  w-100 fw-bold">Get it now</button>
+                        <Link to='/course' className="get_it_now btn btn-light  w-100 fw-bold text-decoration-none"
+                          onClick={() => handleGetItNow(course.id)}>Get it now</Link>
                     </div>
                 </div>
             </div>

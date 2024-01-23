@@ -24,17 +24,16 @@ interface AuthProviderProps {
 
 export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
   const navigate = useNavigate();
-  const [loading,setLoading] = useState<boolean>(true);
+  // const [loading,setLoading] = useState<boolean>(true);
   const [user,setUser] = useState<any>(null);
 
   useEffect(()=>{
-    localStorage.clear();
-    setLoading(false);
+    // setLoading(false);
     checkUserStatus();
   },[]);
 
   const loginUser = async(userInfo:UserInfo)=>{
-    setLoading(true);
+    // setLoading(true);
     console.log('userInfo',userInfo);
     try{
       let response = await account.createEmailSession(userInfo.email,userInfo.password);
@@ -47,7 +46,7 @@ export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
     catch(error){
        console.error(error);
     }
-    setLoading(false);
+    // setLoading(false);
   };
   const logoutUser = async()=>{
      await account.deleteSession('current');
@@ -57,7 +56,7 @@ export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
   };
 
   const registerUser = async(userInfo:UserInfo)=>{
-    setLoading(true);
+    // setLoading(true);
     try{
       let response = await account.create(ID.unique(), userInfo.email, userInfo.password, userInfo.name);
       console.log(response);
@@ -68,7 +67,7 @@ export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
     } catch (error) {
       console.error(error);
     }
-    setLoading(false);
+    // setLoading(false);
   };
 
   const checkUserStatus = async () => {
@@ -78,7 +77,7 @@ export const AuthProvider:React.FC<AuthProviderProps>=({children})=>{
     } catch (error) {
       console.error(error);
     }
-    setLoading(false);
+    // setLoading(false);
   };
   const contextData: AuthContextProps = {
     user,

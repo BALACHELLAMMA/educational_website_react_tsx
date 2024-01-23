@@ -7,11 +7,6 @@ export const pricingFeaturesData = [
   {
     id: 1,
     title: "monthly",
-    // plan: { freePlan: ["Free Plan", "0"] ,proPlan: ["Pro Plan", "79"]},
-    plan:"Free Plan",
-    // freePrice : "0", 
-    // proPrice :"79",
-    price:'0',
     features: [
       [`${available_icon}`, "Access to selected free courses."],
       [`${available_icon}`, "Limited course materials and resources."],
@@ -24,11 +19,7 @@ export const pricingFeaturesData = [
   },
   {
     id: 2,
-    // plan: { freePlan: ["Free Plan", "0"] ,proPlan: ["Pro Plan", "200"]},
     title:'yearly',
-    plan:"Pro Plan",
-    // price: {monthlyPrice : "0", yearlyPrice :"200"},
-    price:'79',
     features: [
       [`${available_icon}`, "Unlimited access to all courses."],
       [`${available_icon}`, "Unlimited courses and materials."],

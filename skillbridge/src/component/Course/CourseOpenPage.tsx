@@ -1,6 +1,5 @@
 import { descriptionList } from "../Data/Description";
 import { uiuxDesignCourseData } from "../Data/UIUXDesignCourseData";
-import { uiux_design } from "../../assets/resource/imgResource";
 import { clock_icon } from "../../assets/resource/iconResource";
 import "./Course.scss";
 
@@ -9,7 +8,8 @@ import { useLocation} from 'react-router-dom';
 function CourseOpenPage() {
   // const { title } = useParams();
   const location = useLocation();
-  const title = location.state;
+  const courseDetails = location.state;
+  // console.log(courseDetails);
   return (
     <div>
       {descriptionList
@@ -22,13 +22,13 @@ function CourseOpenPage() {
             key={description.heading}
           >
             <div className="description_container row">
-              <h1 className="col-md-6 col-12">{title}</h1>
-              <p className="col-md-6 col-12">{description.content}</p>
+              <h1 className="col-md-6 col-12">{courseDetails[0]}</h1>
+              <p className="col-md-6 col-12">{courseDetails[1]}</p>
             </div>
           </section>
         ))}
       <div className="courseImageContainer container">
-        <img src={uiux_design} className="courseImage img-fluid" alt="Course" />
+        <img src={`${courseDetails[2]}`} className="courseImage img-fluid" alt="Course" />
       </div>
 
       <div className="container mt-5 mb-5">
@@ -37,8 +37,8 @@ function CourseOpenPage() {
             return (
               <div className="col ">
                 <div className="card border-0 bg-white p-3 d-flex gap-2">
-                  <h1 className="fw-bold align-self-end">{course.id}</h1>
-                  <h5>{course.heading}</h5>
+                  <h1 className="fw-bold align-self-end">0{course.id}</h1>
+                  <h5>{courseDetails[3][course.id-1]}</h5>
                   <div className="content_container border d-flex flex-wrap flex-md-row flex-column justify-content-md-between p-3 rounded">
                     <div className="topic_container">
                       <p className="fw-medium">

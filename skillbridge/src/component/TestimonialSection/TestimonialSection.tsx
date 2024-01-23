@@ -38,7 +38,7 @@ function TestimonialSection(): JSX.Element {
   const renderTestimonial = testimoniallist.map((testimonial) => {
     return (
       <div className="col-sm-6 mt-3 " key={testimonial.id}>
-        <div className="card border-0">
+        <div className="card border-0 rounded">
           <div className="comments card-header bg-white container">
             <p>{testimonial.desc}</p>
             {state.showMoreContent === testimonial.id ? (

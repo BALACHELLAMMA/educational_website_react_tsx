@@ -20,10 +20,14 @@ import Course from './component/Course/Course';
 
 
 function App() {
+
+
+
   return (
     <div className="App">
       {/* <Router> */}
       <AuthProvider>
+    
         <HeaderComponent />
         <Routes>
           <Route path='/' element={<Login />} />

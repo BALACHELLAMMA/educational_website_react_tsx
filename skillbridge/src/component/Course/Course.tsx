@@ -7,17 +7,16 @@ const Course = () => {
 
   const navigate = useNavigate();
 
-  const handleOpenCourse = (title:string) => {
+  const handleOpenCourse = (title:string,courseContent:string ,courseImage:string, courseTopics:object) => {
     // navigate(`/courseOpenPage/${title}`);
-    navigate('/course/courseOpenPage',{state: title})
+    navigate('/course/courseOpenPage',{state: [title, courseContent,courseImage,courseTopics]})
   };
 
   const renderCourseList = courseList.map((course) => {
     return (
       <section
         className="course_section container bg-white  p-3 mt-3 mb-3 rounded d-flex flex-column
-      gap-4"
-        key={course.id}
+      gap-4" key={course.id}
       >
         <h1>{course.title}</h1>
         <section
@@ -29,7 +28,7 @@ const Course = () => {
             <button
               className="bg-light border-0 rounded p-3"
               // onClick={props.viewCourse}
-              onClick={()=>handleOpenCourse(course.title)}
+              onClick={()=>handleOpenCourse(course.title,course.content, course.images[0],course.topics)}
             >
               <b>View Course</b>
             </button>
@@ -99,6 +98,7 @@ const Course = () => {
             </section>
           );
         })}
+
 
       {renderCourseList}
     </div>

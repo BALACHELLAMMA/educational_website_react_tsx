@@ -91,4 +91,5 @@ export const courseList = [
             `${frontEndDevelopmentImage1}`,`${frontEndDevelopmentImage2}`,`${frontEndDevelopmentImage3}`
         ]
     }
+    
 ];
