@@ -248,21 +248,21 @@ function Contact() {
             className="contact col-12 col-md-4 d-flex flex-column gap-3 p-lg-5 flex-wrap"
             id="contact_section"
           >
-            <div className="card p-3  gap-2 d-flex  flex-column justify-content-center align-items-center">
+            <div className="card  p-2 p-lg-3  gap-2 d-flex  flex-column justify-content-center align-items-center">
               <button className="btn bg-light">
                 <img src={mailIcon} alt="email" />
               </button>
               <p>support@skillbridge.com</p>
             </div>
 
-            <div className="card p-3  gap-2 d-flex  flex-column justify-content-center align-items-center">
+            <div className="card p-2 p-lg-3  gap-2 d-flex  flex-column justify-content-center align-items-center">
               <button className="btn bg-light">
                 <img src={phoneIcon} alt="phone" />
               </button>
               <p>+91 00000 00000</p>
             </div>
 
-            <div className="card p-3  gap-2 d-flex  flex-column justify-content-center align-items-center">
+            <div className="card p-2 p-lg-3  gap-2 d-flex  flex-column justify-content-center align-items-center">
               <button className="btn bg-light">
                 <img src={locationIcon} alt="location" />
               </button>

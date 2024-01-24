@@ -25,7 +25,7 @@ function PricingSection() {
           </div>
           <div
             className="monthly_yearly_button bg-white rounded d-flex gap-1  mt-sm-2 p-2"
-            style={{ width: "170px",height:"70px" }}
+         
           >
             <button
               className={`monthly_Link border-0 ${monthlyYearly === 'monthly' ? 'active' : ''}`}
@@ -111,7 +111,6 @@ function PricingSection() {
                   <div className="text-center p-4">
                     <h2>
                       <span className="price fw-bold">
-                        {" "}
                         {monthlyYearly === "monthly" ? "$79" : "$150"}
                       </span>
                       /{monthlyYearly === "monthly" ? "month" : "year"}

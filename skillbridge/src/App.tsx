@@ -13,17 +13,8 @@ import ContactPage from './pages/Contact/Contact';
 import CourseOpenPage from './component/Course/CourseOpenPage';
 import Course from './component/Course/Course';
 import AboutPage from './pages/About/About';
-import ResetPassword from './component/Auth/ResetPassword';
-import FormComponent from './contactRedux/FormComponent';
-
-
-
-
-
 
 function App() {
-
-
 
   return (
     <div className="App">
@@ -34,7 +25,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/signUp' element={<SignUp />} />
-            <Route path='/form' element={<FormComponent/>}/>
           <Route element={<PrivateRoutes />}>
             <Route path='/home' element={<HomePage />} />
             <Route path='/about' element={<AboutPage />} />

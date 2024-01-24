@@ -1,5 +1,5 @@
 import { courselist } from '../Data/CourseData'
-import useToggleState from '../CommonFunctionalities/Custom Hook/useToggleState';
+import useToggleState from '../CommonFunctionalities/CustomHook/useToggleState';
 import { Link, useNavigate } from 'react-router-dom';
 
 function CourseSection() :JSX.Element{

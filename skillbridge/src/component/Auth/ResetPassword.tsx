@@ -102,52 +102,6 @@ const ResetPassword = () => {
             Change Password
           </button>
         </form>
-        <h2>Change Your Email</h2>
-        <form className="container">
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
-              Enter your new User Email :
-            </label>
-            <input
-              required
-              type="text"
-              name="userEmail"
-              onChange={(e) => {
-                setUserEmail({
-                  ...userEmail,
-                  newUserEmail: e.target.value,
-                });
-              }}
-              className="form-control"
-              id="exampleInputEmail1"
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
-              new name :
-            </label>
-            <input
-              required
-              type="text"
-              name="userEmail"
-              onChange={(e) => {
-                setUserEmail({
-                  ...userEmail,
-                  newUserName: e.target.value,
-                });
-              }}
-              className="form-control"
-              id="exampleInputEmail2"
-            />
-          </div>
-          <button
-            className="btn btn-success"
-            type="submit"
-            onClick={(e) => changeUserEmail(e)}
-          >
-            Change Email & Name
-          </button>
-        </form>
       </div>
     </div>
   );

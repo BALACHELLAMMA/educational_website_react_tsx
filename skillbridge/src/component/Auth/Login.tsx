@@ -4,13 +4,12 @@ import { useRef, useState } from "react";
 import {
   googleLogo,loginArrow
 } from "../../assets/resource/imgResource";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import {
   hide_password_icon,
   open_password_icon,
 } from "../../assets/resource/iconResource";
 import TestimonialSliderComponent from "./TestimonialSliderComponent";
-import { toast } from "react-toastify";
 import { account } from "../../appwriteConfig";
 
 function Login() {
@@ -29,24 +28,23 @@ function Login() {
 
     };
 
-  const handleForgotPassword = async(e)=>{
+    const handleForgotPassword = async()=>{
+       try {
+         await account.createRecovery(loginForm.current.email.value,'/resetPassword');
+        
+       } catch (error) {
+         console.error(error);
+       }
+    }
 
-      e.preventDefault();
-      const userEmail = loginForm.current.email.value;
-      const navigate = useNavigate();
 
-      if (userEmail && userEmail.includes('@')) {
-        await account.createRecovery(
-          userEmail,
-          "http://localhost:5173/resetPassword"
-          // navigate('/home')
-        );
-  
-        toast.success(`Email has been sent!`);
-      } else {
-        toast.error(`Please enter your email!`);
-      }
-  } 
+
+  const googleSignIn = (e: any) => {
+    e.preventDefault();
+    account.createOAuth2Session('google',
+    'http://localhost:5173/home'
+    )
+ };
 
   return (
     <div className="bg-light ">
@@ -114,8 +112,8 @@ function Login() {
             </div>
             <div className="form-group d-flex gap-2 justify-content-end ">
               <Link
-                to="/resetPassword"
-                onClick={(e)=>handleForgotPassword}
+                to="/forgotPassword"
+                onClick={handleForgotPassword}
                 className="forgot_password text-secondary text-decoration-none"
               >
                 forgot password ?
@@ -139,6 +137,7 @@ function Login() {
             <button
               type="submit"
               className="google_sign_up_button border-0 rounded w-100 mt-2 p-3"
+              onClick={(e) => googleSignIn(e)}
             >
               <img src={googleLogo} className="pe-3" />
               Login Up with Google

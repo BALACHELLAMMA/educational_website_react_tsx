@@ -1,6 +1,6 @@
 import React, { useReducer} from "react";
 import { testimoniallist } from "../Data/TestimonialData";
-import useToggleState from "../CommonFunctionalities/Custom Hook/useToggleState";
+import useToggleState from "../CommonFunctionalities/CustomHook/useToggleState";
 
 type ActionType =
   | { type: "SHOW_MORE_CONTENT"; id: number }

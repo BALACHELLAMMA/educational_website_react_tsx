@@ -5,8 +5,8 @@ import { AbstractIcon, videoImg } from "../../assets/resource/imgResource"
 import CourseSection from '../CourseSection/CourseSection'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
 import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'
-import BenefitList from "../BenefitSection/BenefitSection"
 import PricingSection from "../CommonFunctionalities/PricingSection/PricingSection"
+import BenefitList from "../BenefitList/BenefitList"
 
 
 
@@ -40,38 +40,38 @@ function Home() {
 
       <section className="container card_section mt-5 mb-5">
         <div
-          className="card_container  d-flex  bg-white rounded p-3">
-          <div className="img_container  p-5">
+          className="card_container  d-flex justify-content-lg-evenly  bg-white rounded p-md-2 p-3">
+          <div className="img_container p-md-3 w-md-50  p-5">
             <Link to="#">
               <img src={zapier} alt="zapier" className="card-img" />
             </Link>
           </div>
-          <div className="img_container p-5">
+          <div className="img_container p-md-3 w-md-50  p-5">
             <Link to="#">
               <img src={spotify} alt="spotify" className="card-img" />
             </Link>
           </div>
-          <div className="img_container p-5">
+          <div className="img_container p-md-3 w-md-50  p-5">
             <Link to="#">
               <img src={zoom} alt="zoom" className="card-img" />
             </Link>
           </div>
-          <div className="img_container p-5 ">
+          <div className="img_container p-md-3 w-md-50 p-5 ">
             <Link to="#">
               <img src={amazon} alt="amazon" className="card-img" />
             </Link>
           </div>
-          <div className="img_container  p-5 ">
+          <div className="img_container p-md-3 w-md-50  p-5 ">
             <Link to="#" >
               <img src={adobe} alt="adobe" className="card-img" />
             </Link>
           </div>
-          <div className="img_container p-5">
+          <div className="img_container p-md-3 w-md-50  p-5">
             <Link to="#">
               <img src={notion} alt="notion" className="card-img" />
             </Link>
           </div>
-          <div className=" p-5">
+          <div className="p-md-3 w-md-50 p-5">
             <Link to="#">
               <img src={netflix} alt="netflix" className="card-img" />
             </Link>
@@ -84,7 +84,7 @@ function Home() {
       </section>
 
       <div id="benefits">
-        <BenefitList />
+        <BenefitList/>
       </div>
       <div id="courses">
         <CourseSection />

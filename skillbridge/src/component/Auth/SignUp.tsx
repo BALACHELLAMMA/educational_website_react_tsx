@@ -9,7 +9,7 @@ import "./SignUp.scss";
 
 import loginArrow from "../../assets/img/login_arrow.svg";
 import googleLogo from "../../assets/img/google_logo.svg";
-import useBooleanState from "../CommonFunctionalities/Custom Hook/useToggleState";
+import useBooleanState from "../CommonFunctionalities/CustomHook/useToggleState";
 import TestimonialSliderComponent from "./TestimonialSliderComponent";
 import { account } from "../../appwriteConfig";
 
@@ -19,20 +19,8 @@ function SignUp() {
   const registerForm = useRef(null);
   const [showPassword, setShowPassword] = useBooleanState(false);
 
-  function handleCallbackResponse(response: any) {
-    console.log("Encoded JWT ID token: " + response.credentials);
-  }
 
-  // useEffect(()=>{
-  //    google.accounts.id.initialize({
-  //     client_id: "22141762423-5s1hsfcr5to3rpmesjq1hjlve3hcaohp.apps.googleusercontent.com",
-  //     callback : handleCallbackResponse
-  // });
-  // google.accounts.id.renderButton(
-  //   document.getElementById("signInDiv"),
-  //   {theme:"outline",size:"large"}
-  // );
-  // },[]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,8 +35,10 @@ function SignUp() {
   };
 
   const googleSignUp = (e: any) => {
-    e.preventDefault();
-    account.createOAuth2Session("google", location.href);
+     e.preventDefault();
+     account.createOAuth2Session('google',
+     'http://localhost:5173/'
+     )
   };
 
   return (

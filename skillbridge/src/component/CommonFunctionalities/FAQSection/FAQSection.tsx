@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import { closeIcon, plusIcon } from '../../../assets/resource/iconResource';
 import { faqForwardButton } from '../../../assets/resource/imgResource';
 import { faqList } from '../../Data/FAQData';
+import './FAQSection.scss';
 
 
 type ActionType =
@@ -85,9 +86,9 @@ function FAQSection() {
                 <h1>Frequently Asked Questions</h1>
                 <p>Still you have any questions? Contact our Team via support@skillbridge.com</p>
                 <button
-                  className="btn fw-bold bg-light border p-2 "
+                  className="see_all_faq_button btn fw-bold bg-light border p-2 "
                   onClick={() => dispatch({ type: 'TOGGLE_VIEW_ALL' })}
-                  style={{ width: '150px' }}
+                 
                 >
                   {state.viewAll ? 'See Less' : 'See All FAQ’s'}
                 </button>
