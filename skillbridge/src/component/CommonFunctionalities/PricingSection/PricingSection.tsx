@@ -3,7 +3,7 @@ import "./PricingSection.scss";
 import {
   available_icon,
   unavailable_icon,
-} from "../../assets/resource/iconResource";
+} from "../../../assets/resource/iconResource";
 import { useLocation } from "react-router-dom";
 
 function PricingSection() {
@@ -28,13 +28,13 @@ function PricingSection() {
             style={{ width: "170px",height:"70px" }}
           >
             <button
-              className="monthly_Link border-0"
+              className={`monthly_Link border-0 ${monthlyYearly === 'monthly' ? 'active' : ''}`}
               onClick={() => setMonthlyYearly("monthly")}
             >
               <b>Monthly</b>
             </button>
             <button
-              className="yearly_Link border-0"
+              className={`yearly_Link border-0 ${monthlyYearly === 'yearly' ? 'active' : ''}`}
               onClick={() => setMonthlyYearly("yearly")}
             >
               <b>Yearly</b>

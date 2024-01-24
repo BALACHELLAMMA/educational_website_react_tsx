@@ -2,18 +2,16 @@ import "./SignUp.scss";
 import { useAuth } from "../../utils/AuthContext";
 import { useRef, useState } from "react";
 import {
-  SarahImg,
-  forwardArrow,
-  backwardArrow,
-  googleLogo,
-  loginArrow,
+  googleLogo,loginArrow
 } from "../../assets/resource/imgResource";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   hide_password_icon,
   open_password_icon,
 } from "../../assets/resource/iconResource";
 import TestimonialSliderComponent from "./TestimonialSliderComponent";
+import { toast } from "react-toastify";
+import { account } from "../../appwriteConfig";
 
 function Login() {
   const { user, loginUser } = useAuth();
@@ -29,9 +27,27 @@ function Login() {
 
     loginUser(userInfo);
 
-    // const navigateHome = useNavigate();
-    // navigateHome('/home')
-  };
+    };
+
+  const handleForgotPassword = async(e)=>{
+
+      e.preventDefault();
+      const userEmail = loginForm.current.email.value;
+      const navigate = useNavigate();
+
+      if (userEmail && userEmail.includes('@')) {
+        await account.createRecovery(
+          userEmail,
+          "http://localhost:5173/resetPassword"
+          // navigate('/home')
+        );
+  
+        toast.success(`Email has been sent!`);
+      } else {
+        toast.error(`Please enter your email!`);
+      }
+  } 
+
   return (
     <div className="bg-light ">
       <div className="hero_section container bg-light mb-5">
@@ -97,12 +113,13 @@ function Login() {
               </div>
             </div>
             <div className="form-group d-flex gap-2 justify-content-end ">
-              <a
-                href="#"
+              <Link
+                to="/resetPassword"
+                onClick={(e)=>handleForgotPassword}
                 className="forgot_password text-secondary text-decoration-none"
               >
-                forgot password ?{" "}
-              </a>
+                forgot password ?
+              </Link>
             </div>
             <div className="form-group d-flex gap-2">
               <input type="checkbox" />

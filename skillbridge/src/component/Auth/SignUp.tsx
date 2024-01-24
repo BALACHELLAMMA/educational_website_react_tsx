@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import {useRef } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../utils/AuthContext";
 import {
@@ -12,7 +12,7 @@ import googleLogo from "../../assets/img/google_logo.svg";
 import useBooleanState from "../CommonFunctionalities/Custom Hook/useToggleState";
 import TestimonialSliderComponent from "./TestimonialSliderComponent";
 import { account } from "../../appwriteConfig";
-// import { account } from "../../appwriteConfig";
+
 
 function SignUp() {
   const { registerUser } = useAuth();

@@ -1,4 +1,4 @@
-@import "../Scss/main.scss";
+@import "../../Scss/main.scss";
 
 .monthly_yearly_button{
     
@@ -12,12 +12,9 @@
             border-radius: 5px;
     }
 
-    .monthly_Link:active,
-    .monthly_Link:hover,
-    .monthly_Link:focus,
-    .yearly_Link:active,
-    .yearly_Link:hover,
-    .yearly_Link:focus{
+    .monthly_Link.active,
+    .yearly_Link.active
+    {
         background-color: orange;
         color: #ffff;
     }

@@ -1,5 +1,5 @@
 import "./Contact.scss";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { ID } from "appwrite";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -16,17 +16,34 @@ import {
   twitterIcon,
 } from "../../assets/resource/iconResource";
 import { ToastContainer, toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { updateFormData } from "../../contactRedux/store";
 
 interface FormData {
-  firstnameInput: string;
-  lastnameInput: string;
-  emailInput: string;
-  phoneInput: string;
-  subjectInput: string;
-  messageInput: string;
+    firstnameInput: string;
+    lastnameInput: string;
+    emailInput: string;
+    phoneInput: string;
+    subjectInput: string;
+    messageInput: string;
+}
+
+interface ContactFormDataRedux {
+  formData :{
+    firstName: string;
+    lastName:string;
+    userEmail: string;
+    phoneNumber:string;
+    subject:string;
+    message:string;
+  }
 }
 
 function Contact() {
+  const contactDispatch = useDispatch();
+  const {firstName,lastName,userEmail,phoneNumber,subject,message} = useSelector((state:ContactFormDataRedux)=> state.formData);
+  console.log("Redux contact form data : \n",firstName,lastName,userEmail,phoneNumber,subject,message);
+
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
   const emailRef = useRef(null);
@@ -34,10 +51,10 @@ function Contact() {
   const subjectRef = useRef(null);
   const messageRef = useRef(null);
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     try {
-      const formData: FormData = {
+      const contactFormData: FormData = {
         firstnameInput: firstNameRef.current.value,
         lastnameInput: lastNameRef.current.value,
         emailInput: emailRef.current.value,
@@ -46,38 +63,53 @@ function Contact() {
         messageInput: messageRef.current.value,
       };
 
-      const promise = databases.createDocument(
+      //redux
+      contactDispatch(
+        updateFormData({
+          firstName: contactFormData.firstnameInput,
+          lastName: contactFormData.lastnameInput,
+          userEmail: contactFormData.emailInput,
+          phoneNumber: contactFormData.phoneInput,
+          subject: contactFormData.subjectInput,
+          message: contactFormData.messageInput,
+
+        })
+      );
+
+
+
+      const createDocumentPromise = databases.createDocument(
         "65a0d58f05d18f1fd844",
         "65a765dfe6039fba1743",
         ID.unique(),
         {
-          firstname: formData.firstnameInput,
-          lastname: formData.lastnameInput,
-          email: formData.emailInput,
-          phone: formData.phoneInput,
-          subject: formData.subjectInput,
-          message: formData.messageInput,
+          firstname: contactFormData.firstnameInput,
+          lastname: contactFormData.lastnameInput,
+          email: contactFormData.emailInput,
+          phone: contactFormData.phoneInput,
+          subject: contactFormData.subjectInput,
+          message: contactFormData.messageInput,
         }
       );
       const serviceId = "service_8gpwtpa";
       const templateId = "template_ydb45th";
       const publicKey = "lOPJL4qloEffQEiAr";
 
-      const data = {
+      const mailData = {
         service_id: serviceId,
         template_id: templateId,
         user_id: publicKey,
         template_params: {
-          from_name: formData.firstnameInput + " " + formData.lastnameInput,
-          from_email: formData.emailInput,
+          from_name: contactFormData.firstnameInput + " " + contactFormData.lastnameInput,
+          from_email: contactFormData.emailInput,
           to_name: "skillbridge",
-          message: formData.messageInput,
-          subject: formData.subjectInput,
+          message: contactFormData.messageInput,
+          subject: contactFormData.subjectInput,
         },
       };
       const mailSentResponse = await axios.post(
         "https://api.emailjs.com/api/v1.0/email/send",
-        data
+        mailData
       );
       toast.success("Submitted Sucessfully");
       firstNameRef.current.value = "";
@@ -89,7 +121,7 @@ function Contact() {
 
       console.log(
         "Document created:",
-        promise,
+        createDocumentPromise,
         "\n Email Response : ",
         mailSentResponse
       );
@@ -99,7 +131,6 @@ function Contact() {
   };
   return (
     <>
-
       <div>
         {descriptionList
           .filter((description) => {
@@ -123,7 +154,7 @@ function Contact() {
       <div className="container">
         <div className="row row-cols-2 d-flex rounded bg-white p-2">
           <section className="contact col-12 col-md-8  p-4" id="form_section">
-            <Form onSubmit={handleSubmit} className="contactForm">
+            <Form onSubmit={(e)=>handleSubmit} className="contactForm">
               <div className="row row-cols-md-2 ">
                 <Form.Group className="mb-3" controlId="firstNameInput">
                   <Form.Label className="fw-medium">First Name</Form.Label>

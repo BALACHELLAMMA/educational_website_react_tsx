@@ -1,7 +1,6 @@
 import FAQSection from "../../component/CommonFunctionalities/FAQSection/FAQSection";
-import PricingSection from "../../component/Pricing/PricingSection";
+import PricingSection from "../../component/CommonFunctionalities/PricingSection/PricingSection";
 import { descriptionList } from "../../component/Data/Description";
-import './Pricing.scss'
 
 function PricingPage() {
   return (

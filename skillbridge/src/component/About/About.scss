@@ -1,15 +1,14 @@
 @import "../Scss/main.scss"; 
 
-.abstractDesign {
-    width: 100%;
-}
-
 .about_content_card img{
     width: 50px;
 }
-
-.join_button{
-    width: 100px;
+.abstractDesign {
+    width: 100%;
+}
+.join_button {
+  width: 100px;
+  background-color: $orange;
 }
 
 

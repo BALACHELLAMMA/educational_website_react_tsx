@@ -8,8 +8,14 @@ import {
 } from "../../assets/resource/iconResource";
 import { logo } from "../../assets/resource/imgResource";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+import { useLayoutEffect } from 'react';
 
 function Footer() {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div className="footer mt-5  bg-white ">
       <section className="container">

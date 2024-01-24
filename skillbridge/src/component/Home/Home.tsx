@@ -6,7 +6,7 @@ import CourseSection from '../CourseSection/CourseSection'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
 import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'
 import BenefitList from "../BenefitSection/BenefitSection"
-import PricingSection from "../Pricing/PricingSection"
+import PricingSection from "../CommonFunctionalities/PricingSection/PricingSection"
 
 
 

@@ -7,12 +7,14 @@ import NewFooter from '../src/component/Footer/Footer';
 import Login from './component/Auth/Login';
 import { AuthProvider } from './utils/AuthContext';
 import PrivateRoutes from './utils/PrivateRoutes';
-import About from './component/About/About';
 import PricingPage from './pages/Pricing/PricingPage';
 import ContactPage from './pages/Contact/Contact';
 
 import CourseOpenPage from './component/Course/CourseOpenPage';
 import Course from './component/Course/Course';
+import AboutPage from './pages/About/About';
+import ResetPassword from './component/Auth/ResetPassword';
+import FormComponent from './contactRedux/FormComponent';
 
 
 
@@ -32,9 +34,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/signUp' element={<SignUp />} />
+            <Route path='/form' element={<FormComponent/>}/>
           <Route element={<PrivateRoutes />}>
             <Route path='/home' element={<HomePage />} />
-            <Route path='/about' element={<About />} />
+            <Route path='/about' element={<AboutPage />} />
             <Route path='pricing' element={<PricingPage />} />
             <Route path='/contact' element={<ContactPage />} />
             <Route path='/course' element={<Course/>}/>
