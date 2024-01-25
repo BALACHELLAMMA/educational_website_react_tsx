@@ -23,5 +23,17 @@ export const testimoniallist = [
         name:'Michael K',
         image:`${MichaelImage}`,
         desc:"I enrolled in the graphic design course as a beginner, and it was the perfect starting point. The instructor's guidance and feedback improved my design abilities significantly. I'm grateful for this course!"
-    }
+    },
+    {
+        id:5,
+        name:"Sarah L",
+        image:`${SarahImg}`,
+        desc:'The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!'
+    },
+    {
+        id:6,
+        name:"Jason M",
+        image:`${JasonImage}`,
+        desc:"he UI/UX design course exceeded my expectations. The instructor's expertise and practical assignments helped me improve my design skills. I feel more confident in my career now. Thank you!"
+    },
 ];

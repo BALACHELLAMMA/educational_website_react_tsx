@@ -8,18 +8,31 @@ const client = new Client()
     .setProject(PROJECT_ID);    
 
 export const account = new Account(client);
-export default client;
-
-// const storage = new Storage(client);
-// const database = new Databases(client);
 
 
 export const databases = new Databases(client);
 
+    
+export const docFromAppwrite = databases.getDocument(
+    "65a0d58f05d18f1fd844",
+    "65b1f61885bcd03d1583",
+    "1",
+    );
+    
+    docFromAppwrite.then(
+        function (response) {
+            console.log(response);
+        },
+        function (error) {
+            console.log(error);
+        }
+        );
 
 
-
-
+        
+        
+        
+        export default client;
 
 
 

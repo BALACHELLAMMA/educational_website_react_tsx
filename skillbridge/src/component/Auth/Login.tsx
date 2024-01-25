@@ -9,7 +9,7 @@ import {
   hide_password_icon,
   open_password_icon,
 } from "../../assets/resource/iconResource";
-import TestimonialSliderComponent from "./TestimonialSliderComponent";
+import TestimonialSliderComponent from "../TestimonialSection/TestimonialSliderComponent";
 import { account } from "../../appwriteConfig";
 
 function Login() {

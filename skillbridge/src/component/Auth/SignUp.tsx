@@ -10,8 +10,7 @@ import "./SignUp.scss";
 import loginArrow from "../../assets/img/login_arrow.svg";
 import googleLogo from "../../assets/img/google_logo.svg";
 import useBooleanState from "../CommonFunctionalities/CustomHook/useToggleState";
-import TestimonialSliderComponent from "./TestimonialSliderComponent";
-import { account } from "../../appwriteConfig";
+import TestimonialSliderComponent from "../TestimonialSection/TestimonialSliderComponent";
 
 
 function SignUp() {
@@ -34,12 +33,12 @@ function SignUp() {
     registerUser(userInfo);
   };
 
-  const googleSignUp = (e: any) => {
-     e.preventDefault();
-     account.createOAuth2Session('google',
-     'http://localhost:5173/'
-     )
-  };
+  // const googleSignUp = (e: any) => {
+  //    e.preventDefault();
+  //    account.createOAuth2Session('google',
+  //    'http://localhost:5173/'
+  //    )
+  // };
 
   return (
     <div className="bg-light ">
@@ -142,7 +141,7 @@ function SignUp() {
             <button
               type="submit"
               className="google_sign_up_button border-0 rounded w-100 mt-2 p-3"
-              onClick={(e) => googleSignUp(e)}
+              // onClick={(e) => googleSignUp(e)}
             >
               <img src={googleLogo} className="pe-3" />
               Sign Up with Google

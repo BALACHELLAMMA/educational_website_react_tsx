@@ -54,5 +54,23 @@ export const courselist = [
         title : 'Advanced JavaScript',
         desc : 'Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes, asynchronous programming, and ES6 features.Build complex applications with confidence.',
         image : `${advanceJsImage}`
-      }
+      },
+      {
+        id: 7,
+        weeks:'8 weeks',
+        difficulty_level:'Intermediate',
+        instructor : 'By David Brown',
+        title : 'Mobile App Development',
+        desc : 'Dive into the world of mobile app development. Learn to build native iOS and Android applications using industry-leading frameworks like Swift and Kotlin.',
+        image : `${mobileDevelopmentImage}`
+      },
+      {
+        id: 8,
+        weeks:'12 weeks',
+        difficulty_level:'Beginner',
+        instructor : 'By Sarah Thompson',
+        title : 'Graphic Design for Beginners',
+        desc : 'Discover the fundamentals of graphic design, including typography, color theory, layout design, and image manipulation techniques. Create visually stunning designs for print and digital media.',
+        image : `${graphicDesignImage}`
+      },
 ];

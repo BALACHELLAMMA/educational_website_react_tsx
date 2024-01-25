@@ -39,42 +39,59 @@ function FAQSection() {
 
   const [state, dispatch] = useReducer(faqReducer, initialState);
 
-  const renderFAQ = faqList.map((FAQ) => {
-    return (
-      <div className='FAQ_container card p-1 border' key={FAQ.id}>
-        <div className="d-flex flex-column  gap-4 rounded align-content-center p-2">
-          <div className="d-flex justify-content-between  rounded align-content-center p-2 ">
-            <p className="mt-2 fw-medium">{FAQ.question}</p>
-            <button
-              className='open_button border-0 bg-white'
-              onClick={() =>
-                state.showAnswer === FAQ.id
-                  ? dispatch({ type: 'HIDE_ANSWER' })
-                  : dispatch({ type: 'SHOW_ANSWER', id: FAQ.id })
-              }
-            >
-              <img
-                src={state.showAnswer === FAQ.id ? closeIcon : plusIcon}
-                className='open_close_icon w-100'
-                alt='open_close_icon'
-              />
-            </button>
-          </div>
-          {state.showAnswer === FAQ.id ? (
-            <div className="answer_container border-top py-3">
-              <p className="fw-medium px-2">{FAQ.answer}</p>
-              <div className="bg-light d-flex justify-content-between border rounded align-content-center p-2 ">
-                <p className="mt-3 fw-medium">Enrollment Process for Different Courses</p>
-                <button className="faq_forward_button btn btn-circle">
-                  <img src={faqForwardButton} alt="Forward Button" />
-                </button>
-              </div>
+  const FAQList = () => {
+    const renderFAQs = (startIndex: number, endIndex: number) => {
+      const renderedFAQs: JSX.Element[] = [];
+
+      for (let i = startIndex; i <= endIndex; i++) {
+        const faq = faqList[i];
+
+        renderedFAQs.push(
+          <div className='FAQ_container card p-1 border' key={faq.id}>
+          <div className="d-flex flex-column  gap-4 rounded align-content-center p-2">
+            <div className="d-flex justify-content-between  rounded align-content-center p-2 ">
+              <p className="mt-2 fw-medium">{faq.question}</p>
+              <button
+                className='open_button border-0 bg-white'
+                onClick={() =>
+                  state.showAnswer === faq.id
+                    ? dispatch({ type: 'HIDE_ANSWER' })
+                    : dispatch({ type: 'SHOW_ANSWER', id: faq.id })
+                }
+              >
+                <img
+                  src={state.showAnswer === faq.id ? closeIcon : plusIcon}
+                  className='open_close_icon w-100'
+                  alt='open_close_icon'
+                />
+              </button>
             </div>
-          ):null}
+            {state.showAnswer === faq.id ? (
+              <div className="answer_container border-top py-3">
+                <p className="fw-medium px-2">{faq.answer}</p>
+                <div className="bg-light d-flex justify-content-between border rounded align-content-center p-2 ">
+                  <p className="mt-3 fw-medium">Enrollment Process for Different Courses</p>
+                  <button className="faq_forward_button btn btn-circle">
+                    <img src={faqForwardButton} alt="Forward Button" />
+                  </button>
+                </div>
+              </div>
+            ):null}
+          </div>
         </div>
+        );
+      }
+
+      return renderedFAQs;
+    };
+
+    return (
+      <div className="d-flex flex-column gap-2">
+          {renderFAQs(0, 4)}
+          {state.viewAll && renderFAQs(5, faqList.length - 1)}
       </div>
     );
-  });
+  };
 
   return (
     <React.Fragment>
@@ -96,8 +113,7 @@ function FAQSection() {
             </div>
           </div>
           <div className="col-md-7 d-flex flex-column gap-2">
-            {renderFAQ}
-            {state.viewAll ? renderFAQ :null}
+            <FAQList/>
           </div>
         </div>
       </section>

@@ -35,9 +35,16 @@ function TestimonialSection(): JSX.Element {
   const [viewAll, setViewAll] = useToggleState(false);
   const [state, dispatch] = useReducer(faqReducer, initialState);
 
-  const renderTestimonial = testimoniallist.map((testimonial) => {
-    return (
-      <div className="col-sm-6 mt-3 " key={testimonial.id}>
+
+  const TestimonialList = () => {
+    const renderTestimonials = (startIndex: number, endIndex: number) => {
+      const renderedTestimonials: JSX.Element[] = [];
+
+      for (let i = startIndex; i <= endIndex; i++) {
+        const testimonial = testimoniallist[i];
+
+        renderedTestimonials.push(
+          <div className="col-sm-6 mt-3 " key={testimonial.id}>
         <div className="card border-0 rounded">
           <div className="comments card-header bg-white container">
             <p>{testimonial.desc}</p>
@@ -69,8 +76,22 @@ function TestimonialSection(): JSX.Element {
           </div>
         </div>
       </div>
+        );
+      }
+
+      return renderedTestimonials;
+    };
+
+    return (
+      <div className="d-flex flex-column gap-2">
+        <div className="row row-cols-1 row-cols-md-2 g-4">
+          {renderTestimonials(0, 3)}
+          {viewAll && renderTestimonials(4, testimoniallist.length - 1)}
+        </div>
+      </div>
     );
-  });
+  };
+
   return (
     <React.Fragment>
       <div className="container mt-5 mb-5">
@@ -91,8 +112,7 @@ function TestimonialSection(): JSX.Element {
           </div>
         </section>
         <div className="row">
-          {renderTestimonial}
-          {viewAll ? renderTestimonial : null}
+          <TestimonialList/>
         </div>
       </div>
     </React.Fragment>

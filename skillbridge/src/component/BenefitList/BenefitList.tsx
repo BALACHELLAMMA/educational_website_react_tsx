@@ -36,8 +36,12 @@ function BenefitList() {
                     {renderBenefits(0, 2)}
                 </div>
                 <div className="row gap-1">
-                    {renderBenefits(3, benefits.length - 1)}
+                    {renderBenefits(3, 5)}
                 </div>
+                {viewAll ? (  <div className="row gap-1">
+                    {renderBenefits(6, benefits.length - 1)}
+                </div>) : ''}
+             
             </div>
         );
     };
@@ -56,7 +60,6 @@ function BenefitList() {
                     </div>
                 </section>
                 <BenefitSection/>
-                {viewAll ? <BenefitSection/> : null}
             </div>
         </React.Fragment>
     );

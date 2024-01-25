@@ -41,5 +41,23 @@ export const benefits = [
         benefit_number : '06',
         title : 'Interactive Learning Environment',
         desc:'Collaborate with fellow learners, exchanging ideas and feedback to enhance your understanding.' 
-    }
+    },
+    {
+        id:7,
+       benefit_number : '07',
+       title : 'Practical Projects and Assignments',
+       desc:'Fit your coursework around your existing commitments and obligations' 
+    },
+    {
+        id:8,
+        benefit_number : '08',
+        title : 'Interactive Learning Environment',
+        desc:'Collaborate with fellow learners, exchanging ideas and feedback to enhance your understanding.' 
+    },
+    {
+        id:9,
+       benefit_number : '09',
+       title : 'Diverse Course Offerings',
+       desc:'Explore a wide range of design and development courses covering various topics.' 
+    },
 ];
