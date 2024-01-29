@@ -1,7 +1,7 @@
 import "./About.scss";
 import { descriptionList } from "../Data/Description";
 import { aboutContentList } from "../Data/AboutContent";
-import { AbstractDesign } from "../../assets/resource/imgResource";
+import { AbstractDesign } from "../../assets/resource/ImgResource";
 
 const About = () => {
   const renderAbout = aboutContentList.map((item) => {

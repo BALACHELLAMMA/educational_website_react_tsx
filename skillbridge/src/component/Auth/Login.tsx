@@ -3,14 +3,14 @@ import { useAuth } from "../../utils/AuthContext";
 import { useRef, useState } from "react";
 import {
   googleLogo,loginArrow
-} from "../../assets/resource/imgResource";
+} from "../../assets/resource/ImgResource";
 import { Link} from "react-router-dom";
 import {
   hide_password_icon,
   open_password_icon,
-} from "../../assets/resource/iconResource";
+} from "../../assets/resource/IconResource";
 import TestimonialSliderComponent from "../TestimonialSection/TestimonialSliderComponent";
-import { account } from "../../appwriteConfig";
+import { account } from "../../AppwriteConfig";
 
 function Login() {
   const { user, loginUser } = useAuth();

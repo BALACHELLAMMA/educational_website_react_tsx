@@ -13,7 +13,7 @@ import ContactPage from "./pages/Contact/Contact";
 import CourseOpenPage from "./component/Course/CourseOpenPage";
 import Course from "./component/Course/Course";
 import AboutPage from "./pages/About/About";
-import Sample from "./sample";
+import ImageUploadInAppwrite from "./assets/resource/ImageUploadInAppwrite";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signUp" element={<SignUp />} />
-          <Route path="/sample" element={<Sample/>}/>
+          <Route path="/imageUpload" element={<ImageUploadInAppwrite/>}/>
           <Route element={<PrivateRoutes />}>
             <Route path="/home" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />

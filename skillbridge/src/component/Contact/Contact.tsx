@@ -4,7 +4,7 @@ import { ID } from "appwrite";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "react-toastify/dist/ReactToastify.css";
-import { databases } from "../../appwriteConfig";
+import { databases } from "../../AppwriteConfig";
 import { descriptionList } from "../Data/Description";
 import axios from "axios";
 import {
@@ -14,10 +14,10 @@ import {
   linkedInIcon,
   facebookIcon,
   twitterIcon,
-} from "../../assets/resource/iconResource";
+} from "../../assets/resource/IconResource";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { updateFormData } from "../../contactRedux/store";
+import { updateFormData } from "../../contactRedux/Store";
 
 interface FormData {
     firstnameInput: string;

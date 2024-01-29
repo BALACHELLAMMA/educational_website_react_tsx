@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { account } from "../../appwriteConfig";
+import { account } from "../../AppwriteConfig";
 
 interface passwordType {
   newPassword: string;

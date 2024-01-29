@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { useNavigate } from "react-router-dom";
 import { ID } from "appwrite";
-import { account } from "../appwriteConfig";
+import { account } from "../AppwriteConfig";
 
 interface UserInfo {
   email: string;

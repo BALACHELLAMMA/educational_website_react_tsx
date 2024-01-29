@@ -18,7 +18,8 @@ const Course = () => {
         className="course_section container bg-white  p-3 mt-3 mb-3 rounded d-flex flex-column
       gap-4" key={course.id}
       >
-        <h1>{course.title}</h1>
+        <h1>{course.title}
+        </h1>
         <section
           className="course_description d-flex justify-content-between row mb-2"
           key={course.title}

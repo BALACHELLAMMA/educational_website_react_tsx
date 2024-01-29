@@ -5,8 +5,8 @@ import {
   facebookIcon,
   twitterIcon,
   linkedInIcon,
-} from "../../assets/resource/iconResource";
-import { logo } from "../../assets/resource/imgResource";
+} from "../../assets/resource/IconResource";
+import { logo } from "../../assets/resource/ImgResource";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { useEffect} from 'react';

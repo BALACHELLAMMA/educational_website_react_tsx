@@ -4,7 +4,7 @@ import { useAuth } from "../../utils/AuthContext";
 import {
   hide_password_icon,
   open_password_icon,
-} from "../../assets/resource/iconResource";
+} from "../../assets/resource/IconResource";
 import "./SignUp.scss";
 
 import loginArrow from "../../assets/img/login_arrow.svg";

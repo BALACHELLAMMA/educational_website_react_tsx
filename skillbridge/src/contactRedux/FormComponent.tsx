@@ -1,7 +1,7 @@
 // FormComponent.tsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateFormData } from './store';
+import { updateFormData } from './Store';
 
 const FormComponent: React.FC = () => {
   const dispatch = useDispatch();

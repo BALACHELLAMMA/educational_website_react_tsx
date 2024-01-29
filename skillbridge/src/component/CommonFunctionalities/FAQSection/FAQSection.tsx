@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import { closeIcon, plusIcon } from '../../../assets/resource/iconResource';
-import { faqForwardButton } from '../../../assets/resource/imgResource';
+import { closeIcon, plusIcon } from '../../../assets/resource/IconResource';
+import { faqForwardButton } from '../../../assets/resource/ImgResource';
 import { faqList } from '../../Data/FAQData';
 import './FAQSection.scss';
 

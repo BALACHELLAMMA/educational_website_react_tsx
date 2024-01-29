@@ -5,7 +5,7 @@ interface benefits {
     desc : String
 }
 
-export const benefits = [
+export const benefitsData = [
     {
        id:1,
        benefit_number : '01',

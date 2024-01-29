@@ -1,5 +1,5 @@
 import { goalIcon1, goalIcon2, goalIcon3, goalIcon4,
-         achievementIcon1, achievementIcon2,achievementIcon3, achievementIcon4 } from "../../assets/resource/iconResource"; 
+         achievementIcon1, achievementIcon2,achievementIcon3, achievementIcon4 } from "../../assets/resource/IconResource"; 
 
 interface aboutContentList{
    id:number,

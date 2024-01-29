@@ -3,7 +3,7 @@ import "./PricingSection.scss";
 import {
   available_icon,
   unavailable_icon,
-} from "../../../assets/resource/iconResource";
+} from "../../../assets/resource/IconResource";
 import { useLocation } from "react-router-dom";
 
 function PricingSection() {

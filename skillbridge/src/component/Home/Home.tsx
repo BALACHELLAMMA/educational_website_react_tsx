@@ -1,7 +1,7 @@
 import "../Home/Home.scss"
 import { Link } from 'react-router-dom'
-import { LightiningIcon, zapier, spotify, netflix, notion, adobe, amazon, zoom } from "../../assets/resource/iconResource"
-import { AbstractIcon, videoImg } from "../../assets/resource/imgResource"
+import { LightiningIcon, zapier, spotify, netflix, notion, adobe, amazon, zoom } from "../../assets/resource/IconResource"
+import { AbstractIcon, videoImg } from "../../assets/resource/ImgResource"
 import CourseSection from '../CourseSection/CourseSection'
 import TestimonialSection from '../TestimonialSection/TestimonialSection'
 import FAQSection from '../CommonFunctionalities/FAQSection/FAQSection'

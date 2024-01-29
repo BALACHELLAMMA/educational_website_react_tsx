@@ -1,4 +1,4 @@
-import { SarahImg, JasonImage, EmilyImage, MichaelImage } from "../../assets/resource/imgResource";
+import { SarahImg, JasonImage, EmilyImage, MichaelImage } from "../../assets/resource/ImgResource";
 export const testimoniallist = [
     {
         id:1,

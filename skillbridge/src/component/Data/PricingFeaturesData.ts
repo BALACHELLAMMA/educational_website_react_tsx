@@ -1,7 +1,7 @@
 import {
   available_icon,
   unavailable_icon,
-} from "../../assets/resource/iconResource";
+} from "../../assets/resource/IconResource";
 
 export const pricingFeaturesData = [
   {

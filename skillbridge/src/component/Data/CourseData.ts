@@ -1,4 +1,4 @@
-import { webDesignImage, uiuxImage, frontEndImage, mobileDevelopmentImage,advanceJsImage, graphicDesignImage } from "../../assets/resource/imgResource";
+import { webDesignImage, uiuxImage, frontEndImage, mobileDevelopmentImage,advanceJsImage, graphicDesignImage } from "../../assets/resource/ImgResource";
 
 export const courselist = [
       {

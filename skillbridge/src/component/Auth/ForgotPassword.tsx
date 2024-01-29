@@ -1,5 +1,5 @@
 import { ToastContainer, toast } from "react-toastify";
-import { account } from "../../appwriteConfig";
+import { account } from "../../AppwriteConfig";
 import { useRef } from "react";
 
 const ForgotPassword = () => {

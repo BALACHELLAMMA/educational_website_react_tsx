@@ -1,5 +1,5 @@
 import { useReducer, useState } from "react";
-import { forwardArrow, backwardArrow } from "../../assets/resource/imgResource";
+import { forwardArrow, backwardArrow } from "../../assets/resource/ImgResource";
 import { testimoniallist } from "../Data/TestimonialData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

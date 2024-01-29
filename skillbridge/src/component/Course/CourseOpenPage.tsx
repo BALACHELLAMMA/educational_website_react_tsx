@@ -1,6 +1,6 @@
 import { descriptionList } from "../Data/Description";
 import { uiuxDesignCourseData } from "../Data/UIUXDesignCourseData";
-import { clock_icon } from "../../assets/resource/iconResource";
+import { clock_icon } from "../../assets/resource/IconResource";
 import "./Course.scss";
 
 import { useLocation} from 'react-router-dom';
